@@ -4,18 +4,24 @@ import dionneHero from "@/assets/dionne-hero.jpg";
 import dionneAbout from "@/assets/dionne-about.jpg";
 import bookTyranny from "@/assets/book-tyranny.jpg";
 import speakingHero from "@/assets/speaking-hero.jpg";
+import roleLawyer from "@/assets/role-lawyer.jpg";
+import roleSpeaker from "@/assets/role-speaker.jpg";
+import roleAuthor from "@/assets/role-author.jpg";
+import roleHumanitarian from "@/assets/role-humanitarian.jpg";
+import roleLeader from "@/assets/role-leader.jpg";
+import roleCreator from "@/assets/role-creator.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import { Check, Star, Globe, MapPin } from "lucide-react";
 
 const lifeRoles = [
-  { title: "Lawyer", image: dionneHero },
-  { title: "Speaker", image: speakingHero },
-  { title: "Author", image: dionneAbout },
-  { title: "Humanitarian", image: dionneHero },
-  { title: "Leader", image: dionneAbout },
-  { title: "Creator", image: speakingHero },
+  { title: "Lawyer", image: roleLawyer },
+  { title: "Speaker", image: roleSpeaker },
+  { title: "Author", image: roleAuthor },
+  { title: "Humanitarian", image: roleHumanitarian },
+  { title: "Leader", image: roleLeader },
+  { title: "Creator", image: roleCreator },
 ];
 
 const missionPoints = [
