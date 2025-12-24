@@ -97,7 +97,7 @@ const About = () => {
           <div className="flex justify-center items-center gap-4 md:gap-8 flex-wrap">
             {["Lawyer", "Author", "Entrepreneur", "Coach"].map((role, index) => <div key={role} className="flex items-center gap-4 md:gap-8">
                 <span className="font-heading text-2xl md:text-4xl font-semibold">{role}</span>
-                {index < 3 && <div className="h-8 md:h-12 w-[2px] bg-gold"></div>}
+                {index < 3 && <div className="h-8 md:h-12 w-[3px] bg-gold"></div>}
               </div>)}
           </div>
         </div>
