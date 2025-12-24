@@ -58,11 +58,15 @@ const Index = () => {
       <section className="pt-20 md:pt-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex-col min-h-[50vh] relative pb-32 md:pb-40 mx-0 flex items-center justify-end">
-            {/* Left text */}
-            <div className="absolute left-4 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 max-w-xs z-10">
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Blending law, leadership, and<br />
-                mentorship to shape a just and<br />
+            {/* Left content - description with icons */}
+            <div className="absolute left-4 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 z-10 flex items-center gap-4 md:gap-6">
+              {/* Scale icon */}
+              <img src={iconScale} alt="" className="w-16 md:w-24 lg:w-28 opacity-20" />
+              
+              {/* Description text */}
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-[180px] md:max-w-[220px]">
+                Blending law, leadership, and
+                mentorship to shape a just and
                 purpose-driven world.
               </p>
             </div>
@@ -72,14 +76,23 @@ const Index = () => {
               <img alt="Dionne Tweneboah" className="w-72 md:w-96 lg:w-[28rem] object-cover" src="/lovable-uploads/ae4cd500-bdff-4bd7-8a49-231e17955123.png" />
             </div>
 
-            {/* Right buttons */}
-            <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 flex gap-3 z-10">
-              <Button variant="hero" size="lg" className="rounded-full px-6 md:px-8">
-                Book Me
-              </Button>
-              <Button variant="outline" size="lg" className="rounded-full px-6 md:px-8 border-2 border-foreground">
-                About Me
-              </Button>
+            {/* Right content - buttons with icons */}
+            <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 z-10 flex items-center gap-4 md:gap-6">
+              {/* Buttons */}
+              <div className="flex gap-3">
+                <Button variant="hero" size="lg" className="rounded-full px-6 md:px-8">
+                  Book Me
+                </Button>
+                <Button variant="outline" size="lg" className="rounded-full px-6 md:px-8 border-2 border-foreground">
+                  About Me
+                </Button>
+              </div>
+              
+              {/* Gavel and Microphone icons */}
+              <div className="hidden lg:flex items-center gap-2">
+                <img src={iconGavel} alt="" className="w-16 md:w-20 lg:w-24 opacity-20" />
+                <img src={iconMicrophone} alt="" className="w-20 md:w-24 lg:w-28 opacity-20" />
+              </div>
             </div>
           </div>
         </div>
