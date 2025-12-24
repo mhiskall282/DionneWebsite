@@ -85,7 +85,7 @@ const About = () => {
             or learning to heal while you rise, my work is here to remind you
             that purpose is not a luxury, it's your birthright.
           </p>
-          <p className="text-gold font-heading text-xl md:text-2xl font-semibold">
+          <p className="font-heading text-xl md:text-2xl font-semibold text-[#992430]">
             Welcome to a space where purpose meets power.
           </p>
         </div>
