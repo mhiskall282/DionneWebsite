@@ -4,9 +4,9 @@ import Newsletter from "@/components/Newsletter";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import bookTyranny from "@/assets/book-tyranny.png";
-import dionneMessage from "@/assets/dionne-message.jpg";
-import dionneAbout from "@/assets/dionne-about.jpg";
+import bookTyranny from "@/assets/book-tyranny.jpg";
+import dionneMessage from "@/assets/dionne-portrait.jpg";
+import dionneAbout from "@/assets/dionne-portrait.jpg";
 
 const tyrannyFeatures = [
   "Constantly questions your worth, despite being accomplished on paper.",

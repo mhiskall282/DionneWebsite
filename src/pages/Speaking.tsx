@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import speakerHero from "@/assets/speaker-hero.jpg";
-import dionneAbout from "@/assets/dionne-about.jpg";
+import dionneAbout from "@/assets/dionne-portrait.jpg";
 import { CheckCircle, Asterisk } from "lucide-react";
 
 const audienceOutcomes = [
@@ -60,7 +60,7 @@ const Speaking = () => {
               <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
                 Empowering Keynotes · Bold Mindset Shifts · Purpose-Fueled Transformation
               </h1>
-              <Button variant="hero" size="lg" className="rounded-full px-8">
+              <Button size="lg" className="rounded-full px-8 bg-[#F3BA00] hover:bg-[#F3BA00]/90 text-black">
                 Book Now
               </Button>
             </div>
