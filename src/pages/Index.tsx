@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import dionneHero from "@/assets/dionne-hero.jpg";
+import dionneHero from "@/assets/dionne-hero.png";
 import dionneAbout from "@/assets/dionne-about.jpg";
+import iconScale from "@/assets/icon-scale.png";
+import iconGavel from "@/assets/icon-gavel.png";
+import iconMicrophone from "@/assets/icon-microphone.png";
 import bookTyranny from "@/assets/book-tyranny.jpg";
 import speakingHero from "@/assets/speaking-hero.jpg";
 import roleLawyer from "@/assets/role-lawyer.jpg";
@@ -54,44 +57,81 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
-            {/* Left Content */}
-            <div className="space-y-6 py-12">
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">
-                Bestselling author, leadership and<br />
-                transformational speaker & award
-              </p>
-              <p className="text-muted-foreground">purpose-driven soul.</p>
+      <section className="pt-20 md:pt-24 relative overflow-hidden bg-background">
+        {/* Background decorative icons */}
+        <img 
+          src={iconScale} 
+          alt="" 
+          className="absolute left-4 md:left-16 top-1/2 -translate-y-1/2 w-32 md:w-48 opacity-20 pointer-events-none"
+        />
+        <img 
+          src={iconGavel} 
+          alt="" 
+          className="absolute right-8 md:right-24 top-1/3 w-20 md:w-32 opacity-20 pointer-events-none"
+        />
 
-              <div className="flex gap-4 pt-4">
-                <Button variant="hero" size="lg">
-                  Book Me
-                </Button>
-                <Button variant="outline" size="lg">
-                  About Me
-                </Button>
-              </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="flex flex-col items-center justify-center min-h-[60vh] relative">
+            {/* Left text */}
+            <div className="absolute left-4 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 max-w-xs z-10">
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                Blending law, leadership, and<br />
+                mentorship to shape a just and<br />
+                purpose-driven world.
+              </p>
             </div>
 
-            {/* Right - Hero Image */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
-                <img
-                  src={dionneHero}
-                  alt="Dionne Tweneboah"
-                  className="relative w-80 md:w-96 rounded-b-full object-cover shadow-2xl"
-                />
-              </div>
+            {/* Center - Hero Image */}
+            <div className="relative z-20">
+              <img
+                src={dionneHero}
+                alt="Dionne Tweneboah"
+                className="w-72 md:w-96 lg:w-[28rem] object-cover"
+              />
+            </div>
+
+            {/* Right buttons */}
+            <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 flex gap-3 z-10">
+              <Button 
+                variant="hero" 
+                size="lg"
+                className="rounded-full px-6 md:px-8"
+              >
+                Book Me
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="rounded-full px-6 md:px-8 border-2 border-foreground"
+              >
+                About Me
+              </Button>
             </div>
           </div>
+        </div>
 
-          {/* Name Banner */}
-          <div className="bg-primary text-primary-foreground py-8 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm uppercase tracking-widest mb-2 opacity-80">Hi, I'm</p>
-            <h1 className="font-heading text-4xl md:text-6xl font-bold">
+        {/* Name Banner */}
+        <div className="bg-primary text-primary-foreground py-10 md:py-14 relative overflow-hidden">
+          {/* Decorative icons on burgundy banner */}
+          <img 
+            src={iconScale} 
+            alt="" 
+            className="absolute -left-8 md:left-4 bottom-0 w-40 md:w-56 opacity-30 pointer-events-none brightness-0 invert"
+          />
+          <img 
+            src={iconGavel} 
+            alt="" 
+            className="absolute right-20 md:right-40 top-4 w-16 md:w-24 opacity-30 pointer-events-none brightness-0 invert"
+          />
+          <img 
+            src={iconMicrophone} 
+            alt="" 
+            className="absolute right-0 md:right-8 bottom-0 w-24 md:w-36 opacity-30 pointer-events-none brightness-0 invert"
+          />
+
+          <div className="text-center relative z-10">
+            <p className="text-sm md:text-base tracking-widest mb-2 opacity-90 font-heading">Hi, I'm</p>
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-normal italic">
               Dionne<br />Tweneboah
             </h1>
           </div>
