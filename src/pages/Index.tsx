@@ -57,7 +57,28 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex-col min-h-[50vh] relative pb-32 md:pb-40 mx-0 flex items-center justify-end">
+          {/* Mobile Layout */}
+          <div className="flex flex-col items-center pb-32 md:hidden">
+            <p className="text-muted-foreground text-sm text-center leading-relaxed mb-6 px-4">
+              Blending law, leadership, and mentorship to shape a just and purpose-driven world.
+            </p>
+            
+            <div className="relative z-30 mb-6">
+              <img alt="Dionne Tweneboah" className="w-56 sm:w-72 object-cover" src="/lovable-uploads/ae4cd500-bdff-4bd7-8a49-231e17955123.png" />
+            </div>
+            
+            <div className="flex gap-3 z-10">
+              <Button variant="hero" size="default" className="rounded-full px-5">
+                Book Me
+              </Button>
+              <Button variant="outline" size="default" className="rounded-full px-5 border-2 border-foreground">
+                About Me
+              </Button>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden md:flex flex-col min-h-[50vh] relative pb-32 md:pb-40 items-center justify-end">
             {/* Left text */}
             <div className="absolute left-4 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 max-w-xs z-10">
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -232,11 +253,12 @@ const Index = () => {
           </h2>
         </div>
 
+        {/* Mobile: 2 columns, Tablet: 3 columns, Desktop: 6 columns */}
         {/* Title Bar */}
-        <div className="py-4 bg-[#9e846b]">
-          <div className="grid grid-cols-6 max-w-full">
+        <div className="py-3 md:py-4 bg-[#9e846b]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 max-w-full gap-y-1">
             {lifeRoles.map((role, index) => <div key={index} className="text-center">
-                <p className="font-heading text-sm md:text-xl lg:text-2xl text-white font-medium">
+                <p className="font-heading text-xs sm:text-sm md:text-xl lg:text-2xl text-white font-medium">
                   {role.title}
                 </p>
               </div>)}
@@ -244,7 +266,7 @@ const Index = () => {
         </div>
 
         {/* Images Strip */}
-        <div className="grid grid-cols-6 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 w-full">
           {lifeRoles.map((role, index) => <div key={index} className="relative group aspect-[3/4] overflow-hidden">
               <img src={role.image} alt={role.title} className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" />
             </div>)}
