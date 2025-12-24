@@ -87,13 +87,13 @@ const Index = () => {
         {/* Name Banner - overlaps the hero image */}
         <div className="bg-primary text-primary-foreground py-12 relative overflow-hidden -mt-32 md:-mt-40 my-px md:py-0">
           {/* Decorative icons on burgundy banner */}
-          <img src={iconScale} alt="" className="absolute -left-4 md:left-0 bottom-0 w-32 md:w-44 lg:w-52 opacity-40 pointer-events-none brightness-0 invert" />
-          <img src={iconGavel} alt="" className="absolute right-16 md:right-32 lg:right-40 top-2 md:top-4 w-14 md:w-20 lg:w-24 opacity-40 pointer-events-none brightness-0 invert" />
-          <img src={iconMicrophone} alt="" className="absolute -right-2 md:right-4 bottom-0 w-20 md:w-28 lg:w-36 opacity-40 pointer-events-none brightness-0 invert" />
+          <img src={iconScale} alt="" className="absolute left-0 bottom-0 w-28 md:w-40 lg:w-48 opacity-80 pointer-events-none" />
+          <img src={iconGavel} alt="" className="absolute right-12 md:right-24 lg:right-32 top-4 md:top-6 w-16 md:w-24 lg:w-28 opacity-80 pointer-events-none" />
+          <img src={iconMicrophone} alt="" className="absolute right-0 bottom-0 w-24 md:w-32 lg:w-40 opacity-80 pointer-events-none" />
 
-          <div className="text-center relative z-10 pt-20 md:pt-24 px-0 my-0 py-0">
-            <p className="text-sm md:text-base tracking-widest mb-2 opacity-90 font-heading">Hi, I'm</p>
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-normal italic">
+          <div className="text-center relative z-10 pt-20 md:pt-24 pb-6 px-0">
+            <p className="text-base md:text-lg tracking-wide mb-3 opacity-90">Hi, I'm</p>
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold">
               Dionne<br />Tweneboah
             </h1>
           </div>
