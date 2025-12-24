@@ -25,9 +25,9 @@ const navLinks = [{
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/30">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20 shadow-lg">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-lg">
+      <nav className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img src={logo} alt="Dionne Tweneboah" className="h-6 md:h-8 w-auto" />
@@ -42,8 +42,8 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-burgundy hover:bg-burgundy/90 text-white rounded-full px-6 py-2 text-sm font-medium">
-              Book Consultation
+            <Button asChild className="bg-burgundy hover:bg-burgundy/90 text-white rounded-full px-6 py-2 text-sm font-medium">
+              <Link to="/speaking">Book Consultation</Link>
             </Button>
           </div>
 
@@ -59,8 +59,8 @@ const Navbar = () => {
               {navLinks.map(link => <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)} className={`text-base font-medium transition-colors ${location.pathname === link.path ? "text-burgundy" : "text-foreground/70 hover:text-foreground"}`}>
                   {link.name}
                 </Link>)}
-              <Button className="mt-2 w-full bg-burgundy hover:bg-burgundy/90 text-white rounded-full">
-                Book Consultation
+              <Button asChild className="mt-2 w-full bg-burgundy hover:bg-burgundy/90 text-white rounded-full">
+                <Link to="/speaking">Book Consultation</Link>
               </Button>
             </div>
           </div>}
