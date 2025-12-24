@@ -27,7 +27,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/30">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 shadow-lg">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img src={logo} alt="Dionne Tweneboah" className="h-6 md:h-8 w-auto" />
