@@ -18,42 +18,40 @@ import worldMap from "@/assets/world-map.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
-
-const lifeRoles = [
-  { title: "Lawyer", image: roleLawyer },
-  { title: "Speaker", image: roleSpeaker },
-  { title: "Author", image: roleAuthor },
-  { title: "Humanitarian", image: roleHumanitarian },
-  { title: "Leader", image: roleLeader },
-  { title: "Creator", image: roleCreator },
-];
-
-const missionPoints = [
-  {
-    title: "For a Purpose",
-    description:
-      "Awakening purpose in others — inspiring people to rise above fear and live lives aligned with who they're truly meant to be.",
-  },
-  {
-    title: "For a People",
-    description:
-      "Empowering women and youth through storytelling, mentorship, and authentic connection reminding them of their worth and potential.",
-  },
-  {
-    title: "The Passion That Drives Me",
-    description:
-      "Merging creativity, courage, and faith to build projects, platforms, and messages that spark transformation and lasting impact.",
-  },
-  {
-    title: "The Legacy I want to leave on earth",
-    description:
-      "Creating meaningful work that transcends time, a legacy of purpose, empowerment, and hope for generations to come.",
-  },
-];
-
+const lifeRoles = [{
+  title: "Lawyer",
+  image: roleLawyer
+}, {
+  title: "Speaker",
+  image: roleSpeaker
+}, {
+  title: "Author",
+  image: roleAuthor
+}, {
+  title: "Humanitarian",
+  image: roleHumanitarian
+}, {
+  title: "Leader",
+  image: roleLeader
+}, {
+  title: "Creator",
+  image: roleCreator
+}];
+const missionPoints = [{
+  title: "For a Purpose",
+  description: "Awakening purpose in others — inspiring people to rise above fear and live lives aligned with who they're truly meant to be."
+}, {
+  title: "For a People",
+  description: "Empowering women and youth through storytelling, mentorship, and authentic connection reminding them of their worth and potential."
+}, {
+  title: "The Passion That Drives Me",
+  description: "Merging creativity, courage, and faith to build projects, platforms, and messages that spark transformation and lasting impact."
+}, {
+  title: "The Legacy I want to leave on earth",
+  description: "Creating meaningful work that transcends time, a legacy of purpose, empowerment, and hope for generations to come."
+}];
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
@@ -71,27 +69,15 @@ const Index = () => {
 
             {/* Center - Hero Image */}
             <div className="relative z-30">
-              <img
-                src={dionneHero}
-                alt="Dionne Tweneboah"
-                className="w-72 md:w-96 lg:w-[28rem] object-cover"
-              />
+              <img src={dionneHero} alt="Dionne Tweneboah" className="w-72 md:w-96 lg:w-[28rem] object-cover" />
             </div>
 
             {/* Right buttons */}
             <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 flex gap-3 z-10">
-              <Button 
-                variant="hero" 
-                size="lg"
-                className="rounded-full px-6 md:px-8"
-              >
+              <Button variant="hero" size="lg" className="rounded-full px-6 md:px-8">
                 Book Me
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="rounded-full px-6 md:px-8 border-2 border-foreground"
-              >
+              <Button variant="outline" size="lg" className="rounded-full px-6 md:px-8 border-2 border-foreground">
                 About Me
               </Button>
             </div>
@@ -99,25 +85,13 @@ const Index = () => {
         </div>
 
         {/* Name Banner - overlaps the hero image */}
-        <div className="bg-primary text-primary-foreground py-12 md:py-16 relative overflow-hidden -mt-32 md:-mt-40">
+        <div className="bg-primary text-primary-foreground py-12 relative overflow-hidden -mt-32 md:-mt-40 my-px md:py-0">
           {/* Decorative icons on burgundy banner */}
-          <img 
-            src={iconScale} 
-            alt="" 
-            className="absolute -left-4 md:left-0 bottom-0 w-32 md:w-44 lg:w-52 opacity-40 pointer-events-none brightness-0 invert"
-          />
-          <img 
-            src={iconGavel} 
-            alt="" 
-            className="absolute right-16 md:right-32 lg:right-40 top-2 md:top-4 w-14 md:w-20 lg:w-24 opacity-40 pointer-events-none brightness-0 invert"
-          />
-          <img 
-            src={iconMicrophone} 
-            alt="" 
-            className="absolute -right-2 md:right-4 bottom-0 w-20 md:w-28 lg:w-36 opacity-40 pointer-events-none brightness-0 invert"
-          />
+          <img src={iconScale} alt="" className="absolute -left-4 md:left-0 bottom-0 w-32 md:w-44 lg:w-52 opacity-40 pointer-events-none brightness-0 invert" />
+          <img src={iconGavel} alt="" className="absolute right-16 md:right-32 lg:right-40 top-2 md:top-4 w-14 md:w-20 lg:w-24 opacity-40 pointer-events-none brightness-0 invert" />
+          <img src={iconMicrophone} alt="" className="absolute -right-2 md:right-4 bottom-0 w-20 md:w-28 lg:w-36 opacity-40 pointer-events-none brightness-0 invert" />
 
-          <div className="text-center relative z-10 pt-20 md:pt-24">
+          <div className="text-center relative z-10 pt-20 md:pt-24 py-0">
             <p className="text-sm md:text-base tracking-widest mb-2 opacity-90 font-heading">Hi, I'm</p>
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-normal italic">
               Dionne<br />Tweneboah
@@ -140,33 +114,24 @@ const Index = () => {
               </h2>
 
               <div className="space-y-6">
-                {missionPoints.map((point, index) => (
-                  <div key={index}>
-                    <span 
-                      className="inline-block px-3 py-1 text-sm md:text-base font-semibold mb-2"
-                      style={{
-                        background: 'linear-gradient(90deg, hsl(45, 90%, 55%) 0%, hsl(45, 85%, 60%) 100%)',
-                        color: 'hsl(var(--primary))',
-                        transform: 'skewX(-3deg)',
-                      }}
-                    >
+                {missionPoints.map((point, index) => <div key={index}>
+                    <span className="inline-block px-3 py-1 text-sm md:text-base font-semibold mb-2" style={{
+                  background: 'linear-gradient(90deg, hsl(45, 90%, 55%) 0%, hsl(45, 85%, 60%) 100%)',
+                  color: 'hsl(var(--primary))',
+                  transform: 'skewX(-3deg)'
+                }}>
                       {point.title}
                     </span>
                     <p className="text-sm md:text-base leading-relaxed opacity-90 pl-1">
                       {point.description}
                     </p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
             {/* Right Image */}
             <div className="flex justify-center lg:justify-end">
-              <img
-                src={missionImage}
-                alt="Dionne Tweneboah"
-                className="w-full max-w-md object-cover rounded-sm"
-              />
+              <img src={missionImage} alt="Dionne Tweneboah" className="w-full max-w-md object-cover rounded-sm" />
             </div>
           </div>
 
@@ -211,20 +176,13 @@ const Index = () => {
 
             {/* Book Image - Right */}
             <div className="flex justify-center lg:justify-end">
-              <img
-                src={bookTyranny}
-                alt="The Tyranny of The Ordinary Book"
-                className="w-56 md:w-72 lg:w-80 drop-shadow-2xl"
-              />
+              <img src={bookTyranny} alt="The Tyranny of The Ordinary Book" className="w-56 md:w-72 lg:w-80 drop-shadow-2xl" />
             </div>
           </div>
 
           {/* Discover More Button */}
           <div className="mt-12 text-center">
-            <Button 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8"
-            >
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8">
               Discover more books
             </Button>
           </div>
@@ -243,11 +201,7 @@ const Index = () => {
 
           {/* Map with Markers */}
           <div className="relative max-w-5xl mx-auto">
-            <img 
-              src={worldMap} 
-              alt="World Map" 
-              className="w-full h-auto"
-            />
+            <img src={worldMap} alt="World Map" className="w-full h-auto" />
             
             {/* USA Marker */}
             <div className="absolute left-[18%] top-[42%] flex flex-col items-center">
@@ -281,27 +235,19 @@ const Index = () => {
         {/* Title Bar */}
         <div className="bg-[hsl(30,30%,55%)] py-4">
           <div className="grid grid-cols-6 max-w-full">
-            {lifeRoles.map((role, index) => (
-              <div key={index} className="text-center">
+            {lifeRoles.map((role, index) => <div key={index} className="text-center">
                 <p className="font-heading text-sm md:text-xl lg:text-2xl text-white font-medium">
                   {role.title}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
         {/* Images Strip */}
         <div className="grid grid-cols-6 w-full">
-          {lifeRoles.map((role, index) => (
-            <div key={index} className="relative group aspect-[3/4] overflow-hidden">
-              <img
-                src={role.image}
-                alt={role.title}
-                className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
-              />
-            </div>
-          ))}
+          {lifeRoles.map((role, index) => <div key={index} className="relative group aspect-[3/4] overflow-hidden">
+              <img src={role.image} alt={role.title} className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" />
+            </div>)}
         </div>
       </section>
 
@@ -310,8 +256,6 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
