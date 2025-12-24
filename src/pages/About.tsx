@@ -92,7 +92,7 @@ const About = () => {
       </section>
 
       {/* Roles Title Section */}
-      <section className="py-8 px-4 bg-background border-b-2 border-gold">
+      <section className="py-8 px-4 bg-background border-b-2 border-white">
         <div className="container mx-auto">
           <div className="flex justify-center items-center gap-4 md:gap-8 flex-wrap">
             {["Lawyer", "Author", "Entrepreneur", "Coach"].map((role, index) => <div key={role} className="flex items-center gap-4 md:gap-8">
@@ -104,7 +104,7 @@ const About = () => {
       </section>
 
       {/* Roles Cards Section */}
-      <section className="py-12 md:py-16 px-4 bg-background">
+      <section className="py-12 md:py-16 px-4 bg-muted">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {roles.map(role => <div key={role.title} className="text-cream rounded-2xl p-6 text-center bg-[#7b1e23]">
