@@ -69,7 +69,7 @@ const Books = () => {
 
             <div className="flex justify-center lg:justify-end">
               <div className="bg-[hsl(0,0%,90%)] p-8 rounded-lg shadow-2xl">
-                <img src={bookTyranny} alt="The Tyranny of the Ordinary" className="w-64 md:w-80 rounded shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300" />
+                <img src={bookTyranny} alt="The Tyranny of the Ordinary" className="w-64 md:w-80 rounded shadow-xl " />
               </div>
             </div>
           </div>
@@ -294,7 +294,7 @@ const Books = () => {
 
             <div className="flex justify-center lg:justify-end">
               <div className="bg-[hsl(0,0%,85%)] p-8 rounded-lg shadow-2xl">
-                <img src={bookTyranny} alt="The Tyranny of the Ordinary" className="w-64 md:w-80 rounded shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300" />
+                <img src={bookTyranny} alt="The Tyranny of the Ordinary" className="w-64 md:w-80 rounded shadow-xlotate-0 " />
               </div>
             </div>
           </div>
