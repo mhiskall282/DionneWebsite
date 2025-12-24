@@ -89,7 +89,7 @@ const Books = () => {
               amazon
             </span>
             <div className="flex flex-col items-center">
-              <span className="text-lg md:text-xl font-bold text-[hsl(30,100%,25%)]" style={{
+              <span className="text-4xl md:text-xl font-bold text-[hsl(30,100%,25%)]" style={{
               fontFamily: 'Arial, sans-serif'
             }}>amazon</span>
               <span className="text-[hsl(45,100%,40%)] font-medium text-sm">kindle</span>

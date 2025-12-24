@@ -45,7 +45,7 @@ const Speaking = () => {
 
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 relative">
-        <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
+        <div className="relative h-[80vh] md:h-[80vh] overflow-hidden">
           <img
             src={speakerHero}
             alt="Dionne Speaking"
@@ -79,7 +79,9 @@ const Speaking = () => {
           </p>
         </div>
       </section>
-
+      
+      
+      
       {/* About Speaker Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
