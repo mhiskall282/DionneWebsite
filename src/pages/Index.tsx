@@ -233,7 +233,7 @@ const Index = () => {
         </div>
 
         {/* Title Bar */}
-        <div className="bg-[hsl(30,30%,55%)] py-4">
+        <div className="py-4 bg-[#9e846b]">
           <div className="grid grid-cols-6 max-w-full">
             {lifeRoles.map((role, index) => <div key={index} className="text-center">
                 <p className="font-heading text-sm md:text-xl lg:text-2xl text-white font-medium">
