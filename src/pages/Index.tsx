@@ -1,41 +1,41 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import dionneHero from "@/assets/dionne-hero.png";
-import dionneAbout from "@/assets/dionne-about.jpg";
+import dionneHeroImage from "@/assets/dionne-hero.png";
+import dionneAboutImage from "@/assets/dionne-about.jpg";
 import iconScale from "@/assets/icon-scale.png";
 import iconGavel from "@/assets/icon-gavel.png";
 import iconMicrophone from "@/assets/icon-microphone.png";
-import bookTyranny from "@/assets/book-tyranny.png";
-import speakingHero from "@/assets/speaking-hero.jpg";
-import roleLawyer from "@/assets/role-lawyer.jpg";
-import roleSpeaker from "@/assets/role-speaker.jpg";
-import roleAuthor from "@/assets/role-author.jpg";
-import roleHumanitarian from "@/assets/role-humanitarian.jpg";
-import roleLeader from "@/assets/role-leader.jpg";
-import roleCreator from "@/assets/role-creator.jpg";
-import missionImage from "@/assets/mission-image.jpg";
+import bookTyranny from "@/assets/book-tyranny.jpg";
+import speakingHeroImage from "@/assets/speaking-hero.png";
+import roleLawyerImage from "@/assets/role-lawyer.jpg";
+import roleSpeakerImage from "@/assets/role-speaker.jpg";
+import roleAuthorImage from "@/assets/role-author.jpg";
+import roleHumanitarianImage from "@/assets/role-humanitarian.jpg";
+import roleLeaderImage from "@/assets/role-leader.jpg";
+import roleCreatorImage from "@/assets/role-creator.jpg";
+import missionImageImage from "@/assets/mission-image.jpg";
 import worldMap from "@/assets/world-map.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 const lifeRoles = [{
   title: "Lawyer",
-  image: roleLawyer
+  image: roleLawyerImage
 }, {
   title: "Speaker",
-  image: roleSpeaker
+  image: roleSpeakerImage
 }, {
   title: "Author",
-  image: roleAuthor
+  image: roleAuthorImage
 }, {
   title: "Humanitarian",
-  image: roleHumanitarian
+  image: roleHumanitarianImage
 }, {
   title: "Leader",
-  image: roleLeader
+  image: roleLeaderImage
 }, {
   title: "Creator",
-  image: roleCreator
+  image: roleCreatorImage
 }];
 const missionPoints = [{
   title: "For a Purpose",
@@ -64,7 +64,7 @@ const Index = () => {
             </p>
             
             <div className="relative z-30 mb-4">
-              <img alt="Dionne Tweneboah" className="w-48 sm:w-56 object-cover" src="/lovable-uploads/ae4cd500-bdff-4bd7-8a49-231e17955123.png" />
+              <img alt="Dionne Tweneboah" className="w-48 sm:w-56 object-cover" src={dionneHeroImage} />
             </div>
             
             <div className="flex gap-3 z-10">
@@ -89,9 +89,9 @@ const Index = () => {
             </div>
 
             {/* Center - Hero Image */}
-            <div className="relative z-30">
-              <img alt="Dionne Tweneboah" src="/lovable-uploads/ae4cd500-bdff-4bd7-8a49-231e17955123.png" className="w-84 md:w-80 lg:w-96 object-cover" />
-            </div>
+          <div className="relative z-20"> {/* Lower than z-40, so text covers it */}
+          <img alt="Dionne Tweneboah" src={dionneHeroImage} className="w-84 md:w-80 lg:w-96 object-cover" />
+          </div>
 
             {/* Right buttons */}
             <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 flex gap-3 z-10">
@@ -106,8 +106,8 @@ const Index = () => {
         </div>
 
         {/* Name Banner - overlaps the hero image */}
-        <div className="bg-primary text-primary-foreground py-8 relative overflow-hidden -mt-24 md:-mt-32 md:py-0">
-          <div className="text-center relative z-10 pt-4 md:pt-6 pb-4 px-0">
+        <div className="bg-primary text-primary-foreground py-8 relative overflow-hidden -mt-24 md:-mt-32 md:py-0 ">
+          <div className="text-center relative z-40 pt-4 md:pt-6 pb-4 px-0">
             <p className="text-sm md:text-lg tracking-wide mb-2 opacity-90">Hi, I'm</p>
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold">
               Dionne<br />Tweneboah
@@ -152,7 +152,7 @@ const Index = () => {
 
             {/* Right Image */}
             <div className="flex justify-center lg:justify-end">
-              <img alt="Dionne Tweneboah" className="w-full max-w-md object-cover rounded-sm" src="/lovable-uploads/421a7918-9d65-4b35-a778-03b3bfa8c4bf.jpg" />
+              <img alt="Dionne Tweneboah" className="w-full max-w-md object-cover rounded-sm" src={missionImageImage} />
             </div>
           </div>
 
@@ -217,7 +217,7 @@ const Index = () => {
             Leaving my mark all around the globe!
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            I've touched USA, Europe and Africa wit my presence, I'm coming to your continent next.
+            I've touched USA, Europe and Africa with my presence, I'm coming to your continent next.
           </p>
 
           {/* Map with Markers */}

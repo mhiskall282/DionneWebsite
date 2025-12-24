@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import aboutHero from "@/assets/about-hero.jpg";
-import aboutStory from "@/assets/about-story.jpg";
+import aboutStoryImage from "@/assets/about-story.jpg";
 import { Scale, BookOpen, Lightbulb, Users } from "lucide-react";
 const roles = [{
   icon: Scale,
@@ -55,7 +55,7 @@ const About = () => {
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div className="flex justify-center lg:justify-start">
-              <img alt="Dionne's Journey" className="w-full max-w-sm rounded-lg shadow-xl" src="/lovable-uploads/9ec8a693-f6be-4b8e-8cc2-8c1ec68f1208.jpg" />
+              <img alt="Dionne's Journey" className="w-full max-w-sm rounded-lg shadow-xl" src={aboutStoryImage} />
             </div>
 
             <div className="space-y-4 text-cream">

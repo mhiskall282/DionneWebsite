@@ -1,52 +1,77 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import newsletterImage from "@/assets/newsletter-image.jpg";
+import newsImage from "@/assets/news-image.jpg";
 const Newsletter = () => {
-  return <section className="bg-background">
-      {/* Top - Image Section */}
-      <div className="relative h-[400px] md:h-[500px]">
-        <img alt="Dionne Tweneboah" src="/lovable-uploads/1041418e-bd43-48c8-b96c-a08b0bcdb5fb.jpg" className="absolute inset-0 w-full h-full object-cover object-top opacity-85 border-muted color-#40404000" />
-        {/* Name overlay */}
-        <div className="absolute top-8 left-8 md:top-12 md:left-12">
-          <p className="font-heading text-xl md:text-2xl text-white">
+  return (
+    <section className="grid lg:grid-cols-12 min-h-[600px] w-full overflow-hidden bg-white">
+      {/* Left Column: Image with Text Overlay (Occupies 7/12 of the space) */}
+      <div className="relative h-[500px] lg:h-full lg:col-span-7">
+        <img 
+          alt="Dionne Tweneboah" 
+          src={newsImage} 
+          className="absolute inset-0 w-full h-full object-cover object-center" 
+        />
+        {/* Dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-black/20" />
+        
+        {/* Top Left Name */}
+        <div className="absolute top-8 left-8">
+          <p className="font-heading text-xl md:text-2xl text-white font-medium">
             Dionne Tweneboah
+          </p>
+        </div>
+
+        {/* Bottom Text Overlay */}
+        <div className="absolute bottom-12 left-8 right-12 space-y-4">
+          <h3 className="text-white text-3xl md:text-5xl font-serif font-bold leading-tight">
+            It's Your Time to Shine
+          </h3>
+          <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed">
+            Join my newsletter for honest conversations on growth, purpose, and becoming your best self. Every message is crafted to inspire you to rise above ordinary and step boldly into your calling.
           </p>
         </div>
       </div>
 
-      {/* Bottom - Form Section */}
-      <div className="bg-white flex justify-center px-6 py-12 md:py-16">
-        <div className="w-full max-w-xl space-y-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">
-            Become Who You're Meant to Be.
-          </h2>
-          
-          <p className="text-foreground/80 text-lg leading-relaxed">
-            Get empowering stories, lessons, and tools on self-growth, 
-            purpose, and leadership, straight from my heart to your 
-            inbox.
-          </p>
-          
-          <div className="space-y-6 pt-4">
-            <Input type="email" placeholder="Your email" className="h-14 rounded-lg border-muted-foreground/30 px-6 text-base" />
-            
-            {/* Decorative divider */}
-            <div className="flex items-center gap-4">
-              <div className="flex-1 h-px bg-muted-foreground/30"></div>
-              <div className="w-2 h-2 rounded-full bg-muted-foreground/40"></div>
-              <div className="flex-1 h-px bg-muted-foreground/30"></div>
-            </div>
-            
-            <Button variant="hero" className="w-full h-14 text-base">
-              Sign me Up!
-            </Button>
+      {/* Right Column: Form Section (Occupies 5/12 of the space) */}
+      <div className="flex items-center justify-center px-8 py-16 lg:px-12 lg:col-span-5">
+        <div className="w-full max-w-sm space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-[#992430] text-4xl md:text-5xl font-serif font-bold leading-tight">
+              Sign up to my weekly newsletter
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Don't miss your chance. Sign Up today!
+            </p>
           </div>
           
-          <p className="text-sm text-muted-foreground text-center">
-            No spam, just real talk in your inbox.
-          </p>
+          <div className="space-y-6">
+            <Input 
+              type="email" 
+              placeholder="Your email" 
+              className="h-14 rounded-2xl border-gray-300 px-6 text-lg placeholder:text-gray-400" 
+            />
+            
+            {/* Decorative divider with dot */}
+            <div className="flex items-center gap-4 py-2">
+              <div className="flex-1 h-[1px] bg-gray-300"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-500"></div>
+              <div className="flex-1 h-[1px] bg-gray-300"></div>
+            </div>
+            
+            <Button 
+              className="w-full h-14 text-lg font-bold bg-[#992430] hover:bg-[#7a1d26] text-white rounded-2xl transition-all"
+            >
+              Sign me Up!
+            </Button>
+            
+            <p className="text-sm text-gray-400 text-center">
+              No spam, just real talk in your inbox.
+            </p>
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Newsletter;

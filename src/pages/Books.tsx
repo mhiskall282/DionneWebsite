@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import bookTyranny from "@/assets/book-tyranny.jpg";
-import dionneMessage from "@/assets/dionne-portrait.jpg";
+import dionneMessage from "@/assets/dionne-message.jpg";
 import dionneAbout from "@/assets/dionne-portrait.jpg";
 const tyrannyFeatures = ["Constantly questions your worth, despite being accomplished on paper.", "Feels like you are living on autopilot but doesn't know how to break free.", "Has dreams your buried because they felt \"too much\" or \"too late.\"", "Is the strong one for everyone else- but silently struggling with burnout and self-doubt.", "Is multi-passionate but overwhelmed by the pressure to \"choose one thing.\"", "Has a voice, message, or gift inside of her, but fear of visibility keeps you hidden.", "Loves God and desires to honor Him, but doesn't know how purpose fits into your everyday life.", "Is tired of settling for survival when you were created for significance."];
 const conqueringFeatures = ["You've overcome a lot, but still feel like you're not \"enough.\"", "You constantly battle with imposter syndrome or fear of failure.", "You're exhausted from performing for acceptance instead of living authentically.", "You know you're called to lead, but self-doubt keeps paralyzing your progress.", "You feel stuck between who you've been and who you're becoming.", "You want to heal from the wounds of rejection, comparison, or betrayal.", "You're tired of playing it safe and are ready to play by Heaven's rules.", "You're ready to fight back - with strategy, not just strength."];
@@ -106,47 +106,58 @@ const Books = () => {
       </section>
 
       {/* Message Section - Dark Gray */}
-      <section className="bg-[hsl(0,0%,30%)] py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
-            <div className="flex justify-center lg:justify-start">
-              <img alt="Dionne Tweneboah" className="w-72 md:w-96 object-cover" src="/lovable-uploads/b8d601bf-d293-430c-8367-f350ff47b5a5.jpg" />
-            </div>
-            
-            <div className="space-y-6">
-              <p className="text-[hsl(45,100%,50%)] font-bold uppercase tracking-wider">
-                IT'S NOT TOO LATE.
-              </p>
-              
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
-                <span className="text-4xl md:text-5xl">"</span>A Message from Dionne Tweneboah...
-              </h2>
-              
-              <div className="space-y-4 text-white/80 leading-relaxed">
-                <p>
-                  There was a moment when I looked at my life and asked myself a painful question: Is this all there is?
-                </p>
-                <p>
-                  From the outside, things looked fine. But on the inside, I knew I was hiding. I was shrinking, settling, surviving - not thriving.
-                </p>
-                <p>
-                  This book is the answer to that question. It's my love letter to the person who knows they're called to more but feel stuck in cycles of fear, perfectionism, or playing small.
-                </p>
-                <p>
-                  It's for the ones who secretly wonder if it's too late or if they've missed their moment.
-                </p>
-                <p>
-                  <strong className="text-white">It's not too late.</strong> Your purpose didn't expire. The <strong className="text-white">extraordinary</strong> life you crave is still available, and <strong className="text-white">I wrote this to help you reclaim it.</strong>
-                </p>
-              </div>
-              
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground border border-primary-foreground/20 px-8 py-3 uppercase tracking-wide rounded-full">
-                Buy The Tyranny of The Ordinary
-              </Button>
-            </div>
-          </div>
+<section className="bg-white py-16 md:py-24">
+  <div className="container mx-auto px-4">
+    {/* The dark background box that the image overlaps */}
+    <div className="bg-[#333333] grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto p-8 md:p-16 relative">
+      
+      {/* Image Container with Negative Margin to overlap left and bottom */}
+      <div className="relative lg:-ml-28 lg:-mb-28 flex justify-center lg:block">
+        <img 
+          alt="Dionne Tweneboah" 
+          className="w-full max-w-md shadow-2xl" 
+          src={dionneMessage} 
+        />
+      </div>
+      
+      {/* Content Area */}
+      <div className="space-y-6">
+        <p className="text-[#FFD700] font-bold uppercase tracking-wider">
+          IT'S NOT TOO LATE.
+        </p>
+        
+        <h2 className="font-heading text-3xl md:text-5xl font-bold text-white leading-tight">
+          <span className="text-6xl absolute -ml-8 -mt-2 opacity-80">“</span>
+          A Message from Dionne Tweneboah...
+        </h2>
+        
+        <div className="space-y-6 text-white/90 text-lg leading-relaxed font-light">
+          <p>
+            There was a moment when I looked at my life and asked myself a painful question: Is this all there is?
+          </p>
+          <p>
+            From the outside, things looked fine. But on the inside, I knew I was hiding. I was shrinking, settling, surviving - not thriving.
+          </p>
+          <p>
+            This book is the answer to that question. It's my love letter to the person who knows they're called to more but feel stuck in cycles of fear, perfectionism, or playing small.
+          </p>
+          <p>
+            It's for the ones who secretly wonder if it's too late or if they've missed their moment.
+          </p>
+          <p>
+            <strong>It's not too late.</strong> Your purpose didn't expire. The <strong>extraordinary</strong> life you crave is still available, and <strong>I wrote this to help you reclaim it.</strong>
+          </p>
         </div>
-      </section>
+        
+        <div className="pt-4">
+          <button className="bg-[#992430] hover:bg-[#7a1d26] text-white px-8 py-4 uppercase tracking-widest font-bold rounded-full border border-[#FFD700]/30 transition-colors">
+            BUY THE TYRANNY OF THE ORDINARY
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Who This Book Is For - Tyranny */}
       <section className="py-16 md:py-24 bg-[hsl(0,0%,95%)]">
