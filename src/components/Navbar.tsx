@@ -39,7 +39,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map(link => <Link key={link.path} to={link.path} className={`text-sm font-medium transition-colors ${location.pathname === link.path ? "text-burgundy" : "text-foreground/70 hover:text-foreground"}`}>
+            {navLinks.map(link => <Link key={link.path} to={link.path} className={`text-sm font-medium transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-burgundy after:transition-transform after:duration-300 ${location.pathname === link.path ? "text-burgundy after:scale-x-100" : "text-foreground/70 hover:text-burgundy after:scale-x-0 hover:after:scale-x-100 after:origin-left"}`}>
                 {link.name}
               </Link>)}
           </div>
