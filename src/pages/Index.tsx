@@ -109,7 +109,7 @@ const Index = () => {
         <div className="bg-primary text-primary-foreground py-12 relative overflow-hidden -mt-32 md:-mt-40 my-px md:py-0">
           {/* Decorative icons on burgundy banner */}
           <img src={iconScale} alt="" className="absolute left-0 bottom-0 w-28 md:w-40 lg:w-48 opacity-80 pointer-events-none" />
-          <img src={iconGavel} alt="" className="absolute right-12 md:right-24 lg:right-32 top-4 md:top-6 w-16 md:w-24 lg:w-28 opacity-80 pointer-events-none" />
+          <img src={iconGavel} alt="" className="absolute right-12 md:right-24 lg:right-32 bottom-12 md:bottom-16 lg:bottom-20 w-16 md:w-24 lg:w-28 opacity-80 pointer-events-none" />
           <img src={iconMicrophone} alt="" className="absolute right-0 bottom-0 w-24 md:w-32 lg:w-40 opacity-80 pointer-events-none" />
 
           <div className="text-center relative z-10 pt-20 md:pt-24 pb-6 px-0 py-[6px]">
