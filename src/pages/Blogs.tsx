@@ -33,7 +33,13 @@ const Blogs = () => {
                 Nzuri Uhai Foundation inaugurates Rise Up Youth Summit
               </p>
               <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Read
+                 <a
+    href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Read
+  </a>
               </Button>
             </article>
 
@@ -49,7 +55,13 @@ const Blogs = () => {
                 At the Nzuri Uhai Foundation, we are pleased to present the overview and key achievements of our recent RYSE Up Summit, where we invested in the next generation of leaders in the Ashanti Region.
               </p>
               <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Read
+                 <a
+    href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Read
+  </a>
               </Button>
             </article>
 
@@ -65,7 +77,13 @@ const Blogs = () => {
                 At Nzuri Uhai Foundation, we believe that mental health is not a side conversation .
               </p>
               <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Read
+                 <a
+    href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Read
+  </a>
               </Button>
             </article>
           </div>
