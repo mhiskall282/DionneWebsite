@@ -29,7 +29,8 @@ const audienceTypes = [
 const bookingSteps = [
   {
     title: "Connect & Confirm",
-    description: "We start by syncing schedules and learning about your event's heartbeat and goals."
+    description:
+      "We start by syncing schedules and learning about your event's heartbeat and goals.",
   },
   {
     title: "Tailor the Message",
