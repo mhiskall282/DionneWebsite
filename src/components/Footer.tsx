@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/20 text-center">
           <p className="text-white/70 text-lg">
-            ©2025 Dionne Akom Tweneboah
+            ©2026 Dionne Akom Tweneboah
           </p>
         </div>
       </div>
