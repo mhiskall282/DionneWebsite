@@ -5,6 +5,8 @@ import speakerHero from "@/assets/speaker-hero.jpg";
 import dionneAbout from "@/assets/dionne-portrait.jpg";
 import { CheckCircle, Asterisk } from "lucide-react";
 import theirOwnTerms from '@/assets/their own terms.svg'
+import theirOwnTerms from "@/assets/their own terms.svg";
+const BOOKING_URL = "https://cal.com/dionne-oy9u0e/30min";
 
 const audienceOutcomes = [
   "Renewed clarity on their identity and calling",
