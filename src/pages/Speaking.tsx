@@ -5,8 +5,6 @@ import speakerHero from "@/assets/speaker-hero.jpg";
 import dionneAbout from "@/assets/dionne-portrait.jpg";
 import { CheckCircle, Asterisk } from "lucide-react";
 import theirOwnTerms from '@/assets/their own terms.svg'
-import theirOwnTerms from "@/assets/their own terms.svg";
-const BOOKING_URL = "https://cal.com/dionne-oy9u0e/30min";
 
 const audienceOutcomes = [
   "Renewed clarity on their identity and calling",
@@ -29,16 +27,16 @@ const audienceTypes = [
 const bookingSteps = [
   {
     title: "Connect & Confirm",
-    description:
-      "We start by syncing schedules and learning about your event's heartbeat and goals.",
+    description: "We start by syncing schedules and learning about your event's heartbeat and goals."
   },
   {
     title: "Tailor the Message",
-    description:
-      "We'll align the message with your audience's needs, whether it's growth, resilience, leadership, or unlocking purpose.",
+    description: "We'll align the message with your audience's needs, whether it's growth, resilience, leadership, or unlocking purpose."
   },
   {
     title: "Deliver Transformation",
+    description: "We'll align the message with your audience's needs, whether it's growth, resilience, leadership, or unlocking purpose."
+  }
 ];
 
 const Speaking = () => {
