@@ -34,7 +34,8 @@ const bookingSteps = [
   },
   {
     title: "Tailor the Message",
-    description: "We'll align the message with your audience's needs, whether it's growth, resilience, leadership, or unlocking purpose."
+    description:
+      "We'll align the message with your audience's needs, whether it's growth, resilience, leadership, or unlocking purpose.",
   },
   {
     title: "Deliver Transformation",
