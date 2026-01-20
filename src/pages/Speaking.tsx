@@ -39,8 +39,6 @@ const bookingSteps = [
   },
   {
     title: "Deliver Transformation",
-    description: "We'll align the message with your audience's needs, whether it's growth, resilience, leadership, or unlocking purpose."
-  }
 ];
 
 const Speaking = () => {
