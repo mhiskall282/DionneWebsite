@@ -1,11 +1,16 @@
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import speakerHero from "@/assets/speaker-hero.jpg";
 import dionneAbout from "@/assets/dionne-portrait.jpg";
 import { CheckCircle, Asterisk } from "lucide-react";
-import theirOwnTerms from '@/assets/their own terms.svg'
+import theirOwnTerms from "@/assets/their own terms.svg";
 
+/** =========================
+ *  Page Data
+ *  ========================= */
 const audienceOutcomes = [
   "Renewed clarity on their identity and calling",
   "Confidence to make bold moves and live with intention",
@@ -40,34 +45,62 @@ const bookingSteps = [
 ];
 
 const Speaking = () => {
+  // Initialize Cal.com API
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "dionne-booking" });
+      cal("ui", {
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    })();
+  }, []);
+
+  // Function to open Cal modal
+  const openCalModal = () => {
+    const cal = (window as any).Cal;
+    if (cal) {
+      cal("modal", {
+        calLink: "dionne-oy9u0e/30min"
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 relative">
-  <div className="relative h-[70vh] md:h-[90vh] lg:h-[95vh] overflow-hidden bg-black">
-    <img
-      src={speakerHero}
-      alt="Dionne Speaking"
-      className="w-full h-full object-contain object-center"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30"></div>
-    <div className="absolute inset-0 flex items-end justify-center text-center text-primary-foreground pb-16 md:pb-32 lg:pb-40">
-      <div className="max-w-4xl px-4" data-aos="fade-up" data-aos-delay="200">
-        <p className="text-base md:text-lg mb-4 opacity-90" data-aos="fade-up">
-          Book Dionne Tweneboah for Your Next Event
-        </p>
-        <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-8" data-aos="fade-up" data-aos-delay="300">
-          Empowering Keynotes · Bold Mindset Shifts · Purpose-Fueled Transformation
-        </h1>
-        <Button size="lg" className="rounded-full px-8 bg-[#F3BA00] hover:bg-[#F3BA00]/90 text-black" data-aos="zoom-in" data-aos-delay="400">
-          Book Now
-        </Button>
-      </div>
-    </div>
-  </div>
-</section>
+        <div className="relative h-[70vh] md:h-[90vh] lg:h-[95vh] overflow-hidden bg-black">
+          <img
+            src={speakerHero}
+            alt="Dionne Speaking"
+            className="w-full h-full object-contain object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30"></div>
+          <div className="absolute inset-0 flex items-end justify-center text-center text-primary-foreground pb-16 md:pb-32 lg:pb-40">
+            <div className="max-w-4xl px-4" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-base md:text-lg mb-4 opacity-90" data-aos="fade-up">
+                Book Dionne Tweneboah for Your Next Event
+              </p>
+              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-8" data-aos="fade-up" data-aos-delay="300">
+                Empowering Keynotes · Bold Mindset Shifts · Purpose-Fueled Transformation
+              </h1>
+              
+              <Button 
+                size="lg" 
+                className="rounded-full px-8 bg-[#F3BA00] hover:bg-[#F3BA00]/90 text-black" 
+                data-aos="zoom-in" 
+                data-aos-delay="400"
+                onClick={openCalModal}
+              >
+                Book Now
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Intro Section */}
       <section className="py-16 md:py-24 bg-background">
@@ -94,26 +127,30 @@ const Speaking = () => {
             </div>
 
             <div className="space-y-6">
-            <p className="text-xl md:text-2xl leading-relaxed font-bold text-foreground">
-              With a powerful mix of personal story, soul-shaking insight, and
-              practical tools, Dionne challenges audiences to get unstuck, rise with
-              purpose, and redefine success on{" "}
-             <img src={theirOwnTerms} alt="their own terms" className="inline-block" />
-            </p>
+              <p className="text-xl md:text-2xl leading-relaxed font-bold text-foreground">
+                With a powerful mix of personal story, soul-shaking insight, and
+                practical tools, Dionne challenges audiences to get unstuck, rise with
+                purpose, and redefine success on{" "}
+                <img src={theirOwnTerms} alt="their own terms" className="inline-block" />
+              </p>
 
-            {/* Secondary Paragraph */}
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Whether she's standing before thousands or
-              pouring into an intimate room, Dionne leaves no
-              heart untouched. <span className="font-semibold text-foreground">Her message?</span>
-            </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Whether she's standing before thousands or
+                pouring into an intimate room, Dionne leaves no
+                heart untouched. <span className="font-semibold text-foreground">Her message?</span>
+              </p>
+
               <p className="text-muted-foreground text-lg leading-relaxed">
                 You don't have to settle. You don't have to
                 shrink. You were born for more, and it's time to
                 become her.
               </p>
+
               <div className="pt-4">
-                <Button className="bg-primary hover:bg-[#7a1d26] text-white rounded-full px-10 py-6 h-auto text-lg">
+                <Button 
+                  className="bg-primary hover:bg-[#7a1d26] text-white rounded-full px-10 py-6 h-auto text-lg"
+                  onClick={openCalModal}
+                >
                   Book Now
                 </Button>
               </div>
@@ -148,10 +185,19 @@ const Speaking = () => {
                 <Button 
                   variant="outline" 
                   className="rounded-full px-6 border-gold text-gold hover:bg-gold hover:text-foreground"
+                  onClick={() => {
+                    // TODO: Replace with actual media kit PDF URL
+                    window.open('/media-kit.pdf', '_blank');
+                  }}
                 >
                   Download Dionne's Media Kit
                 </Button>
-                <Button variant="hero" className="rounded-full px-6">
+                
+                <Button 
+                  variant="hero" 
+                  className="rounded-full px-6"
+                  onClick={openCalModal}
+                >
                   Inquire About Booking
                 </Button>
               </div>
@@ -229,7 +275,12 @@ const Speaking = () => {
             ))}
           </div>
 
-          <Button variant="hero" size="lg" className="rounded-full px-10 mt-16">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="rounded-full px-10 mt-16"
+            onClick={openCalModal}
+          >
             Book Dionne to Speak
           </Button>
         </div>
@@ -261,7 +312,13 @@ const Speaking = () => {
           <p className="text-lg text-muted-foreground mt-6">
             Let's co-create a powerful moment of purpose and transformation for your audience.
           </p>
-          <Button variant="hero" size="lg" className="rounded-full px-10 mt-8">
+          
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="rounded-full px-10 mt-8"
+            onClick={openCalModal}
+          >
             Book Dionne to Speak
           </Button>
         </div>
