@@ -123,10 +123,10 @@ import social4 from "@/assets/social-4.jpg";
 
 // 🔥 EDIT ONLY THIS PART
 const socialLinks = {
-  linkedin: "https://linkedin.com/in/your-username",
+  linkedin: "https://linkedin.com/in/dionne-tweneboah",
   instagram: "https://instagram.com/dionnetweneboah",
-  facebook: "https://facebook.com/your-username",
-  twitter: "https://twitter.com/your-username", // or x.com
+  facebook: "https://facebook.com/dionne.akom.73",
+  twitter: "https://x.com/dionnetweneboah", // or x.com
 };
 
 const footerLinks = [
@@ -206,7 +206,7 @@ const Footer = () => {
                         {item.overlay === "linkedin" && (
                           <>
                             <Linkedin size={24} className="text-white mb-2" />
-                            <span className="text-white text-sm">@your-linkedin</span>
+                            <span className="text-white text-sm">@dionne-tweneboah</span>
                           </>
                         )}
 
@@ -220,14 +220,14 @@ const Footer = () => {
                         {item.overlay === "facebook" && (
                           <>
                             <Facebook size={24} className="text-white mb-2" />
-                            <span className="text-white text-sm">@your-facebook</span>
+                            <span className="text-white text-sm">@dionne.akom.73</span>
                           </>
                         )}
 
                         {item.overlay === "twitter" && (
                           <>
                             <Twitter size={24} className="text-white mb-2" />
-                            <span className="text-white text-sm">@your-twitter</span>
+                            <span className="text-white text-sm">@dionnetweneboah</span>
                           </>
                         )}
 
