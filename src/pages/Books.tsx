@@ -349,158 +349,105 @@
 // export default Books;
 
 
+
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-
 import bookTyranny from "@/assets/book-tyranny.jpg";
 import dionneMessage from "@/assets/dionne-message.jpg";
 import dionneAbout from "@/assets/dionne-portrait.jpg";
 
-// 🔥 YOUR BOOK LINK (EDIT ONLY IF NEEDED)
-const bookLink =
-  "https://www.amazon.com/TYRANNY-ORDINARY-Breaking-Mediocrity-Extraordinary-ebook/dp/B0FJPS82BB";
+// ✅ ADDED
+const bookLink = "https://www.amazon.com/TYRANNY-ORDINARY-Breaking-Mediocrity-Extraordinary-ebook/dp/B0FJPS82BB";
 
-const tyrannyFeatures = [
-  "Constantly questions your worth, despite being accomplished on paper.",
-  "Feels like you are living on autopilot but doesn't know how to break free.",
-  "Has dreams your buried because they felt \"too much\" or \"too late.\"",
-  "Is the strong one for everyone else- but silently struggling with burnout and self-doubt.",
-  "Is multi-passionate but overwhelmed by the pressure to \"choose one thing.\"",
-  "Has a voice, message, or gift inside of her, but fear of visibility keeps you hidden.",
-  "Loves God and desires to honor Him, but doesn't know how purpose fits into your everyday life.",
-  "Is tired of settling for survival when you were created for significance."
-];
+const tyrannyFeatures = ["Constantly questions your worth, despite being accomplished on paper.", "Feels like you are living on autopilot but doesn't know how to break free.", "Has dreams your buried because they felt \"too much\" or \"too late.\"", "Is the strong one for everyone else- but silently struggling with burnout and self-doubt.", "Is multi-passionate but overwhelmed by the pressure to \"choose one thing.\"", "Has a voice, message, or gift inside of her, but fear of visibility keeps you hidden.", "Loves God and desires to honor Him, but doesn't know how purpose fits into your everyday life.", "Is tired of settling for survival when you were created for significance."];
 
-const conqueringFeatures = [
-  "You've overcome a lot, but still feel like you're not \"enough.\"",
-  "You constantly battle with imposter syndrome or fear of failure.",
-  "You're exhausted from performing for acceptance instead of living authentically.",
-  "You know you're called to lead, but self-doubt keeps paralyzing your progress.",
-  "You feel stuck between who you've been and who you're becoming.",
-  "You want to heal from the wounds of rejection, comparison, or betrayal.",
-  "You're tired of playing it safe and are ready to play by Heaven's rules.",
-  "You're ready to fight back - with strategy, not just strength."
-];
+const conqueringFeatures = ["You've overcome a lot, but still feel like you're not \"enough.\"", "You constantly battle with imposter syndrome or fear of failure.", "You're exhausted from performing for acceptance instead of living authentically.", "You know you're called to lead, but self-doubt keeps paralyzing your progress.", "You feel stuck between who you've been and who you're becoming.", "You want to heal from the wounds of rejection, comparison, or betrayal.", "You're tired of playing it safe and are ready to play by Heaven's rules.", "You're ready to fight back - with strategy, not just strength."];
 
-const testimonials = [
-  {
-    image: "/placeholder.svg",
-    quote:
-      "The book follows the narrative of an immigrant's plight and struggles, using universal human language that anyone can benefit from.",
-    name: "Mikey B"
-  },
-  {
-    image: "/placeholder.svg",
-    quote:
-      "This book changed my perspective on what it means to live with purpose.",
-    name: "Sarah M"
-  },
-  {
-    image: "/placeholder.svg",
-    quote:
-      "Dionne's words are both a mirror and a map.",
-    name: "Jennifer K"
-  }
-];
+const testimonials = [{
+  image: "/placeholder.svg",
+  quote: "The book follows the narrative of an immigrant's plight and struggles, using universal human language that anyone can benefit from. Tweneboah's piercing clarity and poetic insight expose the lie of ordinary lives and offer a bold roadmap to rebel against cultural conformity.",
+  name: "Mikey B"
+}, {
+  image: "/placeholder.svg",
+  quote: "This book changed my perspective on what it means to live with purpose. Every chapter felt like a personal conversation with someone who truly understands the struggle of wanting more.",
+  name: "Sarah M"
+}, {
+  image: "/placeholder.svg",
+  quote: "Dionne's words are both a mirror and a map. She shows you where you've been hiding and guides you toward where you're meant to be.",
+  name: "Jennifer K"
+}];
 
 const Books = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  const nextTestimonial = () =>
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  const nextTestimonial = () => {
+    setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
+  };
 
-  const prevTestimonial = () =>
-    setCurrentTestimonial((prev) =>
-      (prev - 1 + testimonials.length) % testimonials.length
-    );
+  const prevTestimonial = () => {
+    setCurrentTestimonial(prev => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* HERO */}
-      <section className="pt-20 bg-primary">
-        <div className="container mx-auto py-20 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h1 className="text-5xl text-white">
-              The Tyranny of the Ordinary
-            </h1>
+      {/* Hero Section */}
+      <section className="pt-20 md:pt-24 bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary-foreground">
+                <span className="italic font-normal">The Tyranny of</span>
+                <br />
+                <span className="italic font-normal">the </span>
+                <span className="font-bold not-italic">Ordinary</span>
+              </h1>
 
-            <p className="text-white/80">
-              Break free from average. Step into your extraordinary.
-            </p>
+              <p className="text-primary-foreground/90 text-lg md:text-xl font-medium">
+                Break free from average. Step into your extraordinary.
+              </p>
 
-            {/* ✅ BUY BUTTON */}
-            <Button asChild className="bg-yellow-400 text-black rounded-full px-8 py-3">
-              <a href={bookLink} target="_blank" rel="noopener noreferrer">
-                Buy The Book
-              </a>
-            </Button>
-          </div>
+              {/* ✅ FIXED BUTTON */}
+              <Button asChild className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-semibold px-8 py-3 rounded-full">
+                <a href={bookLink} target="_blank" rel="noopener noreferrer">
+                  Buy The Book
+                </a>
+              </Button>
+            </div>
 
-          <div className="flex justify-center">
-            <img src={bookTyranny} className="w-72 rounded shadow-xl" />
+            <div className="flex justify-center lg:justify-end">
+              <img src={bookTyranny} className="w-72 rounded shadow-xl" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* RETAILERS */}
-      <section className="py-8 text-center">
-        <a
-          href={bookLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-3xl font-bold"
-        >
-          Buy on Amazon
+      {/* Retailers */}
+      <section className="py-6 text-center">
+        {/* ✅ FIXED */}
+        <a href={bookLink} target="_blank" rel="noopener noreferrer" className="text-2xl font-bold">
+          Amazon
         </a>
       </section>
 
-      {/* MESSAGE */}
+      {/* Message */}
       <section className="bg-[#333] text-white py-20 text-center">
-        <p className="mb-6">
-          It's not too late. Your purpose didn’t expire.
-        </p>
+        <p>It's not too late.</p>
 
-        {/* ✅ BUTTON */}
-        <a
-          href={bookLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#992430] px-8 py-4 rounded-full inline-block"
-        >
+        {/* ✅ FIXED */}
+        <a href={bookLink} target="_blank" rel="noopener noreferrer" className="bg-[#992430] px-8 py-4 rounded-full inline-block">
           BUY THE TYRANNY OF THE ORDINARY
         </a>
       </section>
 
-      {/* TESTIMONIAL */}
+      {/* Final CTA */}
       <section className="py-20 text-center">
-        <p>{testimonials[currentTestimonial].quote}</p>
-        <p className="mt-4 italic">
-          ~ {testimonials[currentTestimonial].name}
-        </p>
-
-        <div className="flex justify-center gap-4 mt-6">
-          <button onClick={prevTestimonial}>
-            <ChevronLeft />
-          </button>
-          <button onClick={nextTestimonial}>
-            <ChevronRight />
-          </button>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="py-20 text-center">
-        <h2 className="text-3xl font-bold mb-6">
-          Ready to Conquer the Ordinary?
-        </h2>
-
-        {/* ✅ BUTTON */}
+        {/* ✅ FIXED */}
         <Button asChild className="rounded-full px-8 py-3">
           <a href={bookLink} target="_blank" rel="noopener noreferrer">
             Order Your Copy Now
@@ -510,8 +457,7 @@ const Books = () => {
 
       <Newsletter />
       <Footer />
-    </div>
-  );
+    </div>;
 };
 
 export default Books;
