@@ -124,7 +124,7 @@ import social4 from "@/assets/social-4.jpg";
 // 🔥 EDIT ONLY THIS PART
 const socialLinks = {
   linkedin: "https://linkedin.com/in/your-username",
-  instagram: "https://instagram.com/your-username",
+  instagram: "https://instagram.com/dionnetweneboah",
   facebook: "https://facebook.com/your-username",
   twitter: "https://twitter.com/your-username", // or x.com
 };
