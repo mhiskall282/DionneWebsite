@@ -213,7 +213,7 @@ const Footer = () => {
                         {item.overlay === "instagram" && (
                           <>
                             <Instagram size={24} className="text-white mb-2" />
-                            <span className="text-white text-sm">@your-instagram</span>
+                            <span className="text-white text-sm">@dionnetweneboah</span>
                           </>
                         )}
 
