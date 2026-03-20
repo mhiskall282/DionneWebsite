@@ -108,11 +108,23 @@ const Books = () => {
     Order Today
   </a>
 </Button>
-            <span className="text-2xl md:text-3xl font-bold text-[hsl(30,100%,25%)]" style={{
+            {/* <span className="text-2xl md:text-3xl font-bold text-[hsl(30,100%,25%)]" style={{
             fontFamily: 'Arial, sans-serif'
           }}>
               amazon
-            </span>
+            </span> */}
+            <a
+  href="https://www.amazon.com/TYRANNY-ORDINARY-Breaking-Mediocrity-Extraordinary-ebook/dp/B0FJPS82BB"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span
+    className="text-2xl md:text-3xl font-bold text-[hsl(30,100%,25%)]"
+    style={{ fontFamily: "Arial, sans-serif" }}
+  >
+    amazon
+  </span>
+</a>
             <div className="flex flex-col items-center">
               <span className="text-4xl md:text-xl font-bold text-[hsl(30,100%,25%)]" style={{
               fontFamily: 'Arial, sans-serif'
