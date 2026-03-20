@@ -93,9 +93,21 @@ const Books = () => {
       <section className="py-6 bg-background border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <Button className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-medium px-6 py-2 rounded-full">
+            {/* <Button className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-medium px-6 py-2 rounded-full">
               Order Today
-            </Button>
+            </Button> */}
+            <Button
+  asChild
+  className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-medium px-6 py-2 rounded-full"
+>
+  <a
+    href="https://www.amazon.com/TYRANNY-ORDINARY-Breaking-Mediocrity-Extraordinary-ebook/dp/B0FJPS82BB"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Order Today
+  </a>
+</Button>
             <span className="text-2xl md:text-3xl font-bold text-[hsl(30,100%,25%)]" style={{
             fontFamily: 'Arial, sans-serif'
           }}>
