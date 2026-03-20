@@ -125,7 +125,7 @@ const Books = () => {
     amazon
   </span>
 </a>
-            <div className="flex flex-col items-center">
+            {/* <div className="flex flex-col items-center">
               <span className="text-4xl md:text-xl font-bold text-[hsl(30,100%,25%)]" style={{
               fontFamily: 'Arial, sans-serif'
             }}>amazon</span>
@@ -138,7 +138,41 @@ const Books = () => {
               <span className="text-[hsl(30,80%,45%)]">&</span>
               <span className="text-[hsl(180,100%,20%)]">NOBLE</span>
             </span>
-          </div>
+          </div> */}
+
+            <a
+  href="https://www.amazon.com/TYRANNY-ORDINARY-Breaking-Mediocrity-Extraordinary-ebook/dp/B0FJPS82BB"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex flex-col items-center"
+>
+  <div className="flex flex-col items-center">
+    <span
+      className="text-4xl md:text-xl font-bold text-[hsl(30,100%,25%)]"
+      style={{ fontFamily: "Arial, sans-serif" }}
+    >
+      amazon
+    </span>
+    <span className="text-[hsl(45,100%,40%)] font-medium text-sm">
+      kindle
+    </span>
+  </div>
+</a>
+
+<a
+  href="https://www.barnesandnoble.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span
+    className="text-lg md:text-xl font-bold"
+    style={{ fontFamily: "Georgia, serif" }}
+  >
+    <span className="text-[hsl(180,100%,20%)]">BARNES</span>
+    <span className="text-[hsl(30,80%,45%)]">&</span>
+    <span className="text-[hsl(180,100%,20%)]">NOBLE</span>
+  </span>
+</a>
         </div>
       </section>
 
