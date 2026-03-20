@@ -62,9 +62,22 @@ const Books = () => {
                 If you've ever felt the ache of living beneath your potential, The Tyranny of the Ordinary is your wake-up call. This empowering book is for every one who's tired of dimming her light to fit in. Through vivid storytelling, faith-fueled wisdom, and powerful mindset shifts, bestselling author Dionne Tweneboah invites you to confront the comfort zones that are costing you your calling.
               </p>
               
-              <Button className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-semibold px-8 py-3 rounded-full">
+              {/* <Button className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-semibold px-8 py-3 rounded-full">
                 Buy The Book
-              </Button>
+              </Button> */}
+
+              <Button
+  asChild
+  className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-semibold px-8 py-3 rounded-full"
+>
+  <a
+    href="https://www.amazon.com/TYRANNY-ORDINARY-Breaking-Mediocrity-Extraordinary-ebook/dp/B0FJPS82BB"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Buy The Book
+  </a>
+</Button>
             </div>
 
             <div className="flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="200">
