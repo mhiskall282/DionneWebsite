@@ -1,0 +1,50 @@
+generator client {
+  provider      = "prisma-client-js"
+  output        = "./client"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  slug      String   @unique
+  imageUrl  String?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Book {
+  id           String   @id @default(cuid())
+  title        String
+  description  String
+  imageUrl     String?
+  purchaseLink String?
+  published    Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  name        String?
+  role        String   @default("MANAGER") // "ADMIN" or "MANAGER"
+  permissions String // JSON string array of permissions like '["manage_blogs", "manage_users"]'
+  createdAt   DateTime @default(now())
+}
