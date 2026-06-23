@@ -42,14 +42,14 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          <div className="hidden xl:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
             {navLinks.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-burgundy after:transition-transform after:duration-300 ${
+                className={`text-sm font-medium transition-all duration-300 relative inline-block after:content-[''] after:absolute after:w-full after:h-[2px] after:bottom-[-4px] after:left-0 after:bg-burgundy after:transition-transform after:duration-300 ${
                   location.pathname === link.path 
-                    ? "text-burgundy after:scale-x-100" 
+                    ? "text-burgundy after:scale-x-100 after:origin-left" 
                     : "text-foreground/70 hover:text-burgundy after:scale-x-0 hover:after:scale-x-100 after:origin-left"
                 }`}
               >
@@ -59,7 +59,7 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <Button 
               asChild 
               className="bg-burgundy hover:bg-burgundy/90 text-white rounded-full px-6 py-2 text-sm font-medium"
@@ -70,7 +70,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-3 flex-shrink-0 z-50 text-foreground hover:text-burgundy transition-all duration-200 rounded-lg hover:bg-muted active:bg-muted/80 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="xl:hidden p-3 flex-shrink-0 z-50 text-foreground hover:text-burgundy transition-all duration-200 rounded-lg hover:bg-muted active:bg-muted/80 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
@@ -85,7 +85,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation - Dropdown */}
         <div 
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`xl:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >

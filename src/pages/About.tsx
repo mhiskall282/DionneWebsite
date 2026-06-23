@@ -53,8 +53,8 @@ const About = () => {
       {/* Journey Section - Dark Background */}
       <section className="py-16 md:py-24 px-4 bg-neutral-700">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-            <div className="flex justify-center lg:justify-start" data-aos="fade-right">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
+            <div className="flex justify-center md:justify-start" data-aos="fade-right">
               <img alt="Dionne's Journey" className="w-full max-w-sm rounded-lg shadow-xl" src={aboutStoryImage} />
             </div>
 

@@ -23,7 +23,7 @@ const Blogs = () => {
           <div className="space-y-12">
             {/* Blog Post 1 - Rise Up Youth */}
             <article className="group" data-aos="fade-up" data-aos-delay="100">
-              <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-4">
+              <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4">
                 <img src={blogRiseUp} alt="Rise Up Youth Summit" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
@@ -32,7 +32,7 @@ const Blogs = () => {
               <p className="text-muted-foreground mb-4">
                 Nzuri Uhai Foundation inaugurates Rise Up Youth Summit
               </p>
-              <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                  <a
     href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
     target="_blank"
@@ -45,7 +45,7 @@ const Blogs = () => {
 
             {/* Blog Post 2 - RYSE Up Youth Empowerment */}
             <article className="group" data-aos="fade-up" data-aos-delay="200">
-              <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-4">
+              <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4">
                 <img src={blogRyse} alt="RYSE Up Youth Empowerment Summit" className="w-full h-full object-cover" />
               </div>
               <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
@@ -54,7 +54,7 @@ const Blogs = () => {
               <p className="text-muted-foreground mb-4">
                 At the Nzuri Uhai Foundation, we are pleased to present the overview and key achievements of our recent RYSE Up Summit, where we invested in the next generation of leaders in the Ashanti Region.
               </p>
-              <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                  <a
     href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
     target="_blank"
@@ -67,7 +67,7 @@ const Blogs = () => {
 
             {/* Blog Post 3 - World Mental Health Day */}
             <article className="group" data-aos="fade-up" data-aos-delay="300">
-              <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-4">
+              <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4">
                 <img src={blogMentalHealth} alt="World Mental Health Day 2025" className="w-full h-full object-cover object-top" />
               </div>
               <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
@@ -76,7 +76,7 @@ const Blogs = () => {
               <p className="text-muted-foreground mb-4">
                 At Nzuri Uhai Foundation, we believe that mental health is not a side conversation .
               </p>
-              <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                  <a
     href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
     target="_blank"

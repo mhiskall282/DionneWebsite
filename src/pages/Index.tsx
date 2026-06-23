@@ -14,8 +14,7 @@ import roleHumanitarianImage from "@/assets/role-humanitarian.jpg";
 import roleLeaderImage from "@/assets/role-leader.jpg";
 import roleCreatorImage from "@/assets/role-creator.jpg";
 import missionImageImage from "@/assets/mission-image.jpg";
-import MobileHero from '../pages/mobilehero';
-import worldMap from "@/assets/world-map.png";
+import GlobeMap from "@/components/GlobeMap";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter"
@@ -28,17 +27,17 @@ const lifeRoles = [{
   title: "Lawyer",
   image: roleLawyerImage
 }, {
-  title: "Speaker",
-  image: roleSpeakerImage
-}, {
   title: "Author",
   image: roleAuthorImage
 }, {
-  title: "Humanitarian",
+  title: "Philanthropist",
   image: roleHumanitarianImage
 }, {
   title: "Leader",
   image: roleLeaderImage
+}, {
+  title: "Speaker",
+  image: roleSpeakerImage
 }, {
   title: "Creator",
   image: roleCreatorImage
@@ -103,41 +102,59 @@ const Index = () => {
       
       <section className="pt-16 md:pt-20 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-         
-<div className="flex md:hidden"><MobileHero /></div>
+          
+          {/* Mobile/Tablet Layout */}
+          <div className="flex xl:hidden flex-col items-center text-center pt-8 md:pt-12">
+            <div className="flex flex-col gap-6 md:gap-8 z-10 mb-8 md:mb-12" data-aos="fade-up">
+              <p className="text-muted-foreground text-base md:text-xl leading-relaxed max-w-sm md:max-w-xl mx-auto px-4">
+                Blending law, leadership, and mentorship to shape a just and purpose-driven world.
+              </p>
+              <div className="flex justify-center gap-3">
+                <Button asChild variant="hero" size="lg" className="rounded-full px-6">
+                  <Link to="/speaking">Book Me</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full px-6 border-2 border-foreground">
+                  <Link to="/about">About Me</Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative z-10 w-full flex justify-center" data-aos="zoom-in" data-aos-delay="200">
+              <img alt="Dionne Tweneboah" src={dionneHeroImage} className="w-64 md:w-96 object-cover" />
+            </div>
+          </div>
+
           {/* Desktop Layout */}
-          <div className="hidden md:flex flex-col min-h-[40vh] relative pb-24 md:pb-32 items-center justify-end">
-            {/* Left text */}
-            <div className="absolute left-4 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 max-w-xs z-10" data-aos="fade-right">
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+          <div className="hidden xl:flex flex-row min-h-[40vh] relative pt-16 items-end justify-between">
+            {/* Left text & buttons */}
+            <div className="flex flex-col gap-6 pl-4 md:pl-8 xl:pl-16 z-10 mt-16" data-aos="fade-right">
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xs">
                 Blending law, leadership, and<br />
                 mentorship to shape a just and<br />
                 purpose-driven world.
               </p>
+              <div className="flex gap-3">
+                <Button asChild variant="hero" size="lg" className="rounded-full px-6 md:px-8">
+                  <Link to="/speaking">Book Me</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full px-6 md:px-8 border-2 border-foreground">
+                  <Link to="/about">About Me</Link>
+                </Button>
+              </div>
             </div>
 
-            {/* Center - Hero Image */}
-          <div className="relative z-20" data-aos="zoom-in" data-aos-delay="200"> {/* Lower than z-40, so text covers it */}
-          <img alt="Dionne Tweneboah" src={dionneHeroImage} className=" md:w-[30rem] lg:w-[39rem] object-cover" />
-          </div>
-
-            {/* Right buttons */}
-            <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 flex gap-3 z-10" data-aos="fade-left" data-aos-delay="300">
-              <Button asChild variant="hero" size="lg" className="rounded-full px-6 md:px-8">
-                <Link to="/speaking">Book Me</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-6 md:px-8 border-2 border-foreground">
-                <Link to="/about">About Me</Link>
-              </Button>
+            {/* Right - Hero Image */}
+            <div className="relative z-20 flex-1 flex justify-center xl:justify-end pr-4 xl:pr-16 self-end" data-aos="zoom-in" data-aos-delay="200">
+              <img alt="Dionne Tweneboah" src={dionneHeroImage} className="md:w-[30rem] xl:w-[39rem] object-cover" />
             </div>
           </div>
         </div>
 
         {/* Name Banner - overlaps the hero image */}
-        <div className="bg-primary hidden md:block text-primary-foreground py-8 relative overflow-hidden -mt-28 sm:-mt-32 md:-mt-32 md:py-0 ">
-          <div className="text-center relative z-40 pt-4 md:pt-6 pb-4 px-0" data-aos="fade-up" data-aos-delay="400">
+        <div className="bg-primary text-primary-foreground py-8 relative z-30 overflow-hidden -mt-12 sm:-mt-16 md:-mt-24 xl:-mt-40 xl:py-0 ">
+          <div className="text-center relative z-40 pt-6 xl:pt-10 pb-6 px-0" data-aos="fade-up" data-aos-delay="400">
             <p className="text-sm md:text-lg tracking-wide mb-2 opacity-90">Hi, I'm</p>
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold">
+            <h1 className="font-heading text-4xl md:text-5xl xl:text-7xl font-bold">
               Dionne<br />Tweneboah
             </h1>
           </div>
@@ -157,21 +174,33 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
-            <div data-aos="fade-right">
-              <h2 className="font-heading text-3xl md:text-5xl font-bold mb-10 italic">
-                I'm on a Mission
-              </h2>
+            <div data-aos="fade-right" className="flex flex-col h-full justify-between">
+              <div>
+                <h2 className="font-heading text-3xl md:text-5xl font-bold mb-10 italic">
+                  I'm on a Mission
+                </h2>
 
-              <div className="space-y-6">
-                {missionPoints.map((point, index) => <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                    <div className="text-base md:text-lg font-semibold mb-2 inline-block">
-                      <img src={point.title} alt="" className="inline-block" />
-                    </div>
-                    <p className="text-sm md:text-base leading-relaxed opacity-90 pl-1">
-                      {point.description}
-                    </p>
-                  </div>)}
+                <div className="space-y-6">
+                  {missionPoints.map((point, index) => <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+                      <div className="text-base md:text-lg font-semibold mb-2 inline-block">
+                        <img src={point.title} alt="" className="inline-block" />
+                      </div>
+                      <p className="text-sm md:text-base leading-relaxed opacity-90 pl-1">
+                        {point.description}
+                      </p>
+                    </div>)}
+                </div>
               </div>
+
+              <blockquote className="mt-10" data-aos="fade-up" data-aos-delay="200">
+                <div className="flex items-start gap-2 max-w-md">
+                  <span className="text-gold text-4xl md:text-5xl font-heading leading-none">"</span>
+                  <p className="font-heading text-base md:text-lg italic leading-relaxed text-cream/90 mt-2">
+                    True success isn't about recognition or wealth; it's about the lives you touch and the change you inspire while you're here, and long after you're gone
+                  </p>
+                  <span className="text-gold text-4xl md:text-5xl font-heading leading-none self-end">"</span>
+                </div>
+              </blockquote>
             </div>
 
             {/* Right Image */}
@@ -179,16 +208,6 @@ const Index = () => {
               <img alt="Dionne Tweneboah" className="w-full max-w-md object-cover rounded-sm" src={missionImageImage} />
             </div>
           </div>
-
-          <blockquote className="mt-16 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            <div className="flex items-start justify-center gap-2">
-              <span className="text-gold text-4xl md:text-5xl font-heading leading-none">"</span>
-              <p className="font-heading text-lg md:text-xl italic leading-relaxed text-cream/90">
-                True success isn't about recognition or wealth; it's about the lives you touch and the change you inspire while you're here, and long after you're gone
-              </p>
-              <span className="text-gold text-4xl md:text-5xl font-heading leading-none self-end">"</span>
-            </div>
-          </blockquote>
         </div>
       </section>
 
@@ -230,7 +249,7 @@ const Index = () => {
           {/* Discover More Button */}
           <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8">
-              <Link to="/books">Discover more books</Link>
+              <Link to="/books">( Pre-order my next book )</Link>
             </Button>
           </div>
         </div>
@@ -246,27 +265,9 @@ const Index = () => {
             I've touched USA, Europe and Africa with my presence, I'm coming to your continent next.
           </p>
 
-          {/* Map with Markers */}
-          <div className="relative max-w-5xl mx-auto" data-aos="zoom-in" data-aos-delay="200">
-            <img src={worldMap} alt="World Map" className="w-full h-auto" />
-            
-            {/* USA Marker */}
-            <div className="absolute left-[18%] top-[42%] flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
-              <div className="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-primary shadow-lg"></div>
-              <span className="mt-1 text-primary font-heading text-sm md:text-lg font-medium">USA</span>
-            </div>
-            
-            {/* Africa Marker */}
-            <div className="absolute left-[42%] top-[58%] flex flex-col items-center" data-aos="zoom-in" data-aos-delay="500">
-              <div className="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-primary shadow-lg"></div>
-              <span className="mt-1 text-primary font-heading text-sm md:text-lg font-medium">Africa</span>
-            </div>
-            
-            {/* Europe Marker */}
-            <div className="absolute left-[58%] top-[35%] flex flex-col items-center" data-aos="zoom-in" data-aos-delay="600">
-              <div className="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-primary shadow-lg"></div>
-              <span className="mt-1 text-primary font-heading text-sm md:text-lg font-medium">Europe</span>
-            </div>
+          {/* Interactive Globe */}
+          <div className="relative max-w-5xl mx-auto py-8" data-aos="zoom-in" data-aos-delay="200">
+            <GlobeMap />
           </div>
         </div>
       </section>

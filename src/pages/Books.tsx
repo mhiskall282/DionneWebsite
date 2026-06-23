@@ -210,22 +210,22 @@ const Books = () => {
       </section>
 
       {/* Message Section - Dark Gray */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="bg-[#333333] grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto p-8 md:p-16 relative">
+      <section className="bg-white py-16 md:py-24 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#333333] flex flex-col md:flex-row gap-8 lg:gap-12 items-center max-w-5xl mx-auto p-8 lg:p-16 relative mt-16 md:mt-0">
 
             <div
-              className="relative lg:-ml-28 lg:-mb-28 flex justify-center lg:block"
+              className="relative w-full md:w-1/2 flex justify-center md:justify-start md:-ml-16 lg:-ml-28 md:-mb-12 lg:-mb-28 -mt-20 md:mt-0 z-10"
               data-aos="fade-right"
             >
               <img
                 alt="Dionne Tweneboah"
-                className="w-full max-w-md shadow-2xl"
+                className="w-full max-w-xs md:max-w-sm lg:max-w-md shadow-2xl object-cover rounded-sm"
                 src={dionneMessage}
               />
             </div>
 
-            <div className="space-y-6" data-aos="fade-left">
+            <div className="w-full md:w-1/2 space-y-6 z-10" data-aos="fade-left">
               <p className="text-[#FFD700] font-bold uppercase tracking-wider">
                 IT'S NOT TOO LATE.
               </p>
@@ -279,8 +279,9 @@ const Books = () => {
       </section>
 
       {/* Who This Book Is For - Tyranny */}
-      <section className="py-16 md:py-24 bg-[hsl(0,0%,95%)]">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(#d1d5db 1px, transparent 1px)", backgroundSize: "24px 24px", opacity: 0.5 }}></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2">
               Who This Book Is For
@@ -293,7 +294,7 @@ const Books = () => {
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto bg-white p-8 md:p-12 shadow-sm rounded-xl">
             <h3
               className="font-heading text-xl md:text-2xl font-semibold mb-8 text-center text-primary"
               data-aos="fade-up"
@@ -519,8 +520,9 @@ const Books = () => {
       </section>
 
       {/* Who This Book Is For - Conquering */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(#d1d5db 1px, transparent 1px)", backgroundSize: "24px 24px", opacity: 0.5 }}></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="font-heading text-3xl md:text-4xl font-bold">
               Who This Book Is For
@@ -528,7 +530,7 @@ const Books = () => {
           </div>
 
           <div
-            className="max-w-5xl mx-auto bg-[hsl(0,0%,95%)] rounded-lg p-8 md:p-12"
+            className="max-w-5xl mx-auto bg-white rounded-xl shadow-sm p-8 md:p-12"
             data-aos="zoom-in"
           >
             <h3 className="font-heading text-xl md:text-2xl font-semibold mb-8 text-center text-primary">

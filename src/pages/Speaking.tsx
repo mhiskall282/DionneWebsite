@@ -218,7 +218,7 @@ const Speaking = () => {
       <section className="py-16 md:py-24 bg-dark text-primary-foreground">
         <div className="container mx-auto text-center px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2">
-            Why Audiences <span className="underline decoration-2 underline-offset-4">Love</span> Dionne
+            Why Audiences <span className="underline decoration-wavy decoration-2 underline-offset-8">Love</span> Dionne
           </h2>
           
           <blockquote className="max-w-4xl mx-auto my-8 md:my-12">
@@ -255,7 +255,7 @@ const Speaking = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto text-center px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-            Is This for Your Audience?
+            Is <span className="border-b-[4px] border-[#FFD700] pb-1">This</span> for Your Audience?
           </h2>
           <p className="text-muted-foreground mb-12">
             Dionne is the right voice for your stage if your audience is filled with:
