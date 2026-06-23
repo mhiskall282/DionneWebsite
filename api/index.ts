@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import authRouter from './auth.js';
-import blogsRouter from './blogs.js';
-import booksRouter from './books.js';
-import newsletterRouter from './newsletter.js';
-import uploadRouter from './upload.js';
+import authRouter from '../backend/auth.js';
+import blogsRouter from '../backend/blogs.js';
+import booksRouter from '../backend/books.js';
+import newsletterRouter from '../backend/newsletter.js';
+import uploadRouter from '../backend/upload.js';
 
 const app = express();
 

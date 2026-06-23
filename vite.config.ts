@@ -37,4 +37,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    external: ["../prisma/client/index.js", "prisma/client"],
+  },
 }));

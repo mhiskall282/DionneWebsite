@@ -1,4 +1,6 @@
-import { PrismaClient } from '../prisma/client/index.js';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { PrismaClient } = require('../prisma/client/index.js');
 
 // Prevent multiple instances of Prisma Client in development
 declare global {
