@@ -62,7 +62,7 @@ router.post('/', async (req: Request, res: Response) => {
       `;
 
       await transporter.sendMail({
-        from: \`"Dionne Tweneboah" <\${process.env.SMTP_USER || 'newsletters@dionnetweneboah.com'}>\`,
+        from: `"Dionne Tweneboah" <${process.env.SMTP_USER || 'newsletters@dionnetweneboah.com'}>`,
         to: email,
         subject: "Welcome to my Newsletter! It's your time to shine 🌟",
         html: welcomeTemplate,
@@ -103,7 +103,7 @@ router.post('/send', requireAuth, async (req: Request, res: Response) => {
       port: Number(process.env.SMTP_PORT) || 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER || 'hello@dionnetweneboah.com',
+        user: process.env.SMTP_USER || 'newsletters@dionnetweneboah.com',
         pass: process.env.SMTP_PASS,
       },
     });
@@ -132,7 +132,7 @@ router.post('/send', requireAuth, async (req: Request, res: Response) => {
       `;
 
       return transporter.sendMail({
-        from: `"Dionne Tweneboah" <${process.env.SMTP_USER || 'hello@dionnetweneboah.com'}>`,
+        from: `"Dionne Tweneboah" <${process.env.SMTP_USER || 'newsletters@dionnetweneboah.com'}>`,
         to: email,
         subject: subject,
         html: customHtmlTemplate,
