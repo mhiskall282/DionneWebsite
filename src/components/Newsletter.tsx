@@ -78,18 +78,21 @@
 
 
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import newsImage from "@/assets/news-image.jpg";
 
 const Newsletter = () => {
-  const [email, setEmail] = useState("");
+  const emailRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const email = emailRef.current?.value;
+    if (!email) return;
+    
     setStatus("loading");
     setErrorMsg("");
 
@@ -104,7 +107,7 @@ const Newsletter = () => {
 
       if (response.ok) {
         setStatus("success");
-        setEmail("");
+        if (emailRef.current) emailRef.current.value = "";
       } else {
         setStatus("error");
         setErrorMsg(data.error || "Something went wrong. Please try again.");
@@ -177,8 +180,7 @@ const Newsletter = () => {
               <Input
                 type="email"
                 placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                ref={emailRef}
                 required
                 disabled={status === "loading"}
                 className="h-14 rounded-2xl border-gray-300 px-6 text-lg placeholder:text-gray-400"
