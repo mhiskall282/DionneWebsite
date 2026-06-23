@@ -14,6 +14,13 @@ import Blogs from "./pages/Blogs";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 
+import AdminLogin from "./pages/admin/Login";
+import AdminLayout from "./pages/admin/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import NewsletterManager from "./pages/admin/NewsletterManager";
+import BlogsManager from "./pages/admin/BlogsManager";
+import BooksManager from "./pages/admin/BooksManager";
+
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -55,6 +62,16 @@ const AppContent = () => {
         <Route path="/speaking" element={<Speaking />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/resources" element={<Resources />} />
+        
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/*" element={<AdminLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="newsletter" element={<NewsletterManager />} />
+          <Route path="blogs" element={<BlogsManager />} />
+          <Route path="books" element={<BooksManager />} />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

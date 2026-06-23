@@ -1,10 +1,28 @@
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import blogRiseUp from "@/assets/blog-rise-up.jpg";
-import blogRyse from "@/assets/blog-ryse.jpg";
-import blogMentalHealth from "@/assets/blog-mental-health.jpg";
+
 const Blogs = () => {
+  const [blogs, setBlogs] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch("/api/blogs");
+        const data = await res.json();
+        if (res.ok) {
+          setBlogs(data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch blogs:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
   return <div className="min-h-screen bg-background">
       <Navbar />
 
@@ -21,71 +39,38 @@ const Blogs = () => {
       <section className="pb-16 px-4 sm:px-6 lg:px-8 bg-muted">
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-12">
-            {/* Blog Post 1 - Rise Up Youth */}
-            <article className="group" data-aos="fade-up" data-aos-delay="100">
-              <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4">
-                <img src={blogRiseUp} alt="Rise Up Youth Summit" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
-                Rise Up Youth
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                Nzuri Uhai Foundation inaugurates Rise Up Youth Summit
-              </p>
-              <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                 <a
-    href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Read
-  </a>
-              </Button>
-            </article>
-
-            {/* Blog Post 2 - RYSE Up Youth Empowerment */}
-            <article className="group" data-aos="fade-up" data-aos-delay="200">
-              <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4">
-                <img src={blogRyse} alt="RYSE Up Youth Empowerment Summit" className="w-full h-full object-cover" />
-              </div>
-              <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
-                Project Report: RYSE Up Youth Empowerment Summit (Ashanti R...
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                At the Nzuri Uhai Foundation, we are pleased to present the overview and key achievements of our recent RYSE Up Summit, where we invested in the next generation of leaders in the Ashanti Region.
-              </p>
-              <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                 <a
-    href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Read
-  </a>
-              </Button>
-            </article>
-
-            {/* Blog Post 3 - World Mental Health Day */}
-            <article className="group" data-aos="fade-up" data-aos-delay="300">
-              <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4">
-                <img src={blogMentalHealth} alt="World Mental Health Day 2025" className="w-full h-full object-cover object-top" />
-              </div>
-              <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
-                World Mental Health Day 2025
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                At Nzuri Uhai Foundation, we believe that mental health is not a side conversation .
-              </p>
-              <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                 <a
-    href="https://www.myjoyonline.com/nzuri-uhai-foundation-inaugurates-rise-up-youth-summit/?myjo"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Read
-  </a>
-              </Button>
-            </article>
+            {loading ? (
+              <div className="text-center py-12 text-muted-foreground">Loading posts...</div>
+            ) : blogs.length === 0 ? (
+              <div className="text-center py-12 text-muted-foreground">No posts found. Check back later!</div>
+            ) : (
+              blogs.map((blog, idx) => (
+                <article key={blog.id} className="group" data-aos="fade-up" data-aos-delay={`${(idx % 3) * 100 + 100}`}>
+                  <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mb-4 bg-muted">
+                    {blog.imageUrl ? (
+                      <img src={blog.imageUrl} alt={blog.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-muted-foreground">No Image</div>
+                    )}
+                  </div>
+                  <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">
+                    {blog.title}
+                  </h2>
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
+                    {blog.content}
+                  </p>
+                  <Button asChild variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                    <a
+                      href={blog.slug.startsWith('http') ? blog.slug : `/blogs/${blog.slug}`}
+                      target={blog.slug.startsWith('http') ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                    >
+                      Read
+                    </a>
+                  </Button>
+                </article>
+              ))
+            )}
           </div>
 
           <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="400">

@@ -83,12 +83,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import newsImage from "@/assets/news-image.jpg";
 
-// ─────────────────────────────────────────────
-// 🔧 PASTE DIONNE'S KIT CREDENTIALS HERE
-const KIT_API_KEY = "YOUR_API_KEY_HERE";  // e.g. "abc123xyz..."
-const KIT_FORM_ID = "YOUR_FORM_ID_HERE"; // e.g. "7654321"
-// ─────────────────────────────────────────────
-
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -100,26 +94,20 @@ const Newsletter = () => {
     setErrorMsg("");
 
     try {
-      const response = await fetch(
-        `https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            api_key: KIT_API_KEY,
-            email,
-          }),
-        }
-      );
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
       const data = await response.json();
 
-      if (response.ok && data.subscription) {
+      if (response.ok) {
         setStatus("success");
         setEmail("");
       } else {
         setStatus("error");
-        setErrorMsg(data.message || "Something went wrong. Please try again.");
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
       }
     } catch (err) {
       setStatus("error");

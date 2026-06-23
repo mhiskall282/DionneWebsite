@@ -3,15 +3,14 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Post {
   id        String   @id @default(cuid())
   title     String
-  content   String   @db.Text
+  content   String
   slug      String   @unique
   imageUrl  String?
   published Boolean  @default(false)
@@ -22,7 +21,7 @@ model Post {
 model Book {
   id          String   @id @default(cuid())
   title       String
-  description String   @db.Text
+  description String
   imageUrl    String?
   purchaseLink String?
   published   Boolean  @default(false)
