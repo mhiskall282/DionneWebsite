@@ -1,7 +1,7 @@
 # Project Handover Document
 ## dionnetweneboah.com — Official Website
 
-**Prepared by:** Lead Developer  
+**Prepared by:** John Okyere 
 **Handover Date:** June 2026  
 **Project Owner:** Dionne Tweneboah  
 **Website:** https://dionnetweneboah.com
