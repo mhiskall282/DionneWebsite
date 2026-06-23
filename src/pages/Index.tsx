@@ -101,71 +101,92 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Section */}
+      <section className="relative overflow-hidden bg-background">
 
-      
-      <section className="pt-16 md:pt-20 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          
-          {/* Mobile/Tablet Layout */}
-          <div className="flex xl:hidden flex-col items-center text-center pt-8 md:pt-12">
-            <div className="flex flex-col gap-6 md:gap-8 z-10 mb-8 md:mb-12" data-aos="fade-up">
-              <p className="text-muted-foreground text-base md:text-xl leading-relaxed max-w-sm md:max-w-xl mx-auto px-4">
+        {/* ── DESKTOP (≥1024px): 3-column layout ── */}
+        <div className="hidden lg:block relative">
+          {/* Three-column row: text | portrait | buttons */}
+          <div className="flex items-end justify-center min-h-[420px] xl:min-h-[520px] pt-24 pb-0 gap-0">
+            {/* Left: tagline text */}
+            <div className="flex-1 flex justify-end items-center pb-16 pr-8 xl:pr-12 z-10" data-aos="fade-right">
+              <p className="text-muted-foreground text-lg xl:text-xl font-medium leading-relaxed max-w-xs text-right">
                 Blending law, leadership, and mentorship to shape a just and purpose-driven world.
               </p>
-              <div className="flex justify-center gap-3">
-                <Button asChild variant="hero" size="lg" className="rounded-full px-6">
-                  <Link to="/speaking">Book Me</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full px-6 border-2 border-foreground">
-                  <Link to="/about">About Me</Link>
-                </Button>
-              </div>
             </div>
 
-            <div className="relative z-10 w-full flex justify-center" data-aos="zoom-in" data-aos-delay="200">
-              <img alt="Dionne Tweneboah" src={dionneHeroImage} className="w-64 md:w-96 object-cover" />
+            {/* Center: Dionne portrait — sits above the red banner */}
+            <div className="relative z-20 flex-shrink-0 flex justify-center items-end" data-aos="zoom-in" data-aos-delay="200">
+              <img
+                alt="Dionne Tweneboah"
+                src={dionneHeroImage}
+                className="w-[26rem] xl:w-[34rem] object-cover object-top"
+                style={{ marginBottom: "-2px" }}
+              />
+            </div>
+
+            {/* Right: CTA buttons */}
+            <div className="flex-1 flex flex-col sm:flex-row justify-start items-center gap-4 pb-16 pl-8 xl:pl-12 z-10" data-aos="fade-left">
+              <Button asChild variant="hero" size="lg" className="rounded-full px-8 py-5 text-base xl:text-lg shadow-lg hover:-translate-y-1 transition-transform">
+                <Link to="/speaking">Book Me</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-5 text-base xl:text-lg border-2 border-foreground hover:-translate-y-1 transition-transform">
+                <Link to="/about">About Me</Link>
+              </Button>
             </div>
           </div>
 
-          {/* Desktop Layout */}
-          <div className="hidden xl:flex flex-row min-h-[40vh] relative pt-16 items-end justify-between">
-            {/* Left text & buttons */}
-            <div className="flex flex-col gap-6 pl-4 md:pl-8 xl:pl-16 z-10 mt-16" data-aos="fade-right">
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xs">
-                Blending law, leadership, and<br />
-                mentorship to shape a just and<br />
-                purpose-driven world.
-              </p>
-              <div className="flex gap-3">
-                <Button asChild variant="hero" size="lg" className="rounded-full px-6 md:px-8">
-                  <Link to="/speaking">Book Me</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full px-6 md:px-8 border-2 border-foreground">
-                  <Link to="/about">About Me</Link>
-                </Button>
-              </div>
+          {/* Red Name Banner — sits flush under the portrait */}
+          <div className="bg-primary text-primary-foreground py-8 xl:py-10 relative overflow-hidden">
+            <div className="text-center relative z-40 px-0" data-aos="fade-up" data-aos-delay="300">
+              <p className="text-sm md:text-base tracking-widest mb-1 opacity-90 uppercase">Hi, I'm</p>
+              <h1 className="font-heading text-5xl xl:text-7xl font-bold">
+                Dionne<br />Tweneboah
+              </h1>
             </div>
-
-            {/* Right - Hero Image */}
-            <div className="relative z-20 flex-1 flex justify-center xl:justify-end pr-4 xl:pr-16 self-end" data-aos="zoom-in" data-aos-delay="200">
-              <img alt="Dionne Tweneboah" src={dionneHeroImage} className="md:w-[30rem] xl:w-[39rem] object-cover" />
-            </div>
+            <img src={iconScale} alt="" className="absolute left-0 bottom-0 w-32 lg:w-40 opacity-80 pointer-events-none" />
+            <img src={iconGavel} alt="" className="absolute right-12 top-1/2 -translate-y-1/2 w-24 lg:w-28 opacity-80 pointer-events-none" />
+            <img src={iconMicrophone} alt="" className="absolute right-0 bottom-0 w-16 lg:w-20 opacity-80 pointer-events-none" />
           </div>
         </div>
 
-        {/* Name Banner - overlaps the hero image */}
-        <div className="bg-primary text-primary-foreground py-8 relative z-30 overflow-hidden -mt-12 sm:-mt-16 md:-mt-32 lg:-mt-40 xl:-mt-48 xl:py-0 ">
-          <div className="text-center relative z-40 pt-6 xl:pt-10 pb-6 px-0" data-aos="fade-up" data-aos-delay="400">
-            <p className="text-sm md:text-lg tracking-wide mb-2 opacity-90">Hi, I'm</p>
-            <h1 className="font-heading text-4xl md:text-5xl xl:text-7xl font-bold">
-              Dionne<br />Tweneboah
-            </h1>
+        {/* ── MOBILE / TABLET (<1024px) ── */}
+        <div className="lg:hidden flex flex-col items-center pt-24 pb-0 bg-background">
+          {/* Text + Buttons */}
+          <div className="flex flex-col items-center text-center gap-5 px-6 mb-6" data-aos="fade-up">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-sm">
+              Blending law, leadership, and mentorship to shape a just and purpose-driven world.
+            </p>
+            <div className="flex gap-3 flex-wrap justify-center">
+              <Button asChild variant="hero" size="lg" className="rounded-full px-7">
+                <Link to="/speaking">Book Me</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-7 border-2 border-foreground">
+                <Link to="/about">About Me</Link>
+              </Button>
+            </div>
           </div>
-          
-          {/* Decorative icons - positioned below text */}
-          <img src={iconScale} alt="" className="absolute left-0 bottom-0 w-20 md:w-32 lg:w-40 opacity-80 pointer-events-none" data-aos="fade-right" data-aos-delay="500" />
-          <img src={iconGavel} alt="" className="absolute right-0 top-1/2 -translate-y-1/2 w-16 md:w-24 lg:w-28 opacity-80 pointer-events-none" data-aos="zoom-in" data-aos-delay="600" />
-          <img src={iconMicrophone} alt="" className="absolute right-0 bottom-0 w-14 md:w-20 lg:w-16 opacity-80 pointer-events-none" data-aos="fade-left" data-aos-delay="700" />
+
+          {/* Portrait */}
+          <div className="relative z-20 w-full flex justify-center" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              alt="Dionne Tweneboah"
+              src={dionneHeroImage}
+              className="w-56 sm:w-72 md:w-96 object-cover object-top"
+              style={{ marginBottom: "-2px" }}
+            />
+          </div>
+
+          {/* Red Name Banner */}
+          <div className="w-full bg-primary text-primary-foreground py-8 relative overflow-hidden">
+            <div className="text-center relative z-40 px-4">
+              <p className="text-sm tracking-widest mb-1 opacity-90 uppercase">Hi, I'm</p>
+              <h1 className="font-heading text-4xl sm:text-5xl font-bold">
+                Dionne<br />Tweneboah
+              </h1>
+            </div>
+            <img src={iconScale} alt="" className="absolute left-0 bottom-0 w-20 sm:w-28 opacity-80 pointer-events-none" />
+            <img src={iconMicrophone} alt="" className="absolute right-0 bottom-0 w-14 sm:w-20 opacity-80 pointer-events-none" />
+          </div>
         </div>
       </section>
 
