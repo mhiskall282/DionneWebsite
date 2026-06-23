@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutStoryImage from "@/assets/about-story.jpg";
 import { Scale, BookOpen, Lightbulb, Users } from "lucide-react";
@@ -21,7 +22,8 @@ const roles = [{
   description: "As a coach, Dionne empowers, individuals especially women and youth, to unlock confidence, direction, and their full potential."
 }];
 const About = () => {
-  return <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background font-sans pt-20">
+      <SEO title="About Dionne Tweneboah | Lawyer & Speaker" />
       <Navbar />
 
       {/* Hero Section */}

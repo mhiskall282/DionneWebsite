@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState<any[]>([]);
@@ -23,7 +24,9 @@ const Blogs = () => {
     };
     fetchBlogs();
   }, []);
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
+      <SEO title="Blogs & Articles | Dionne Tweneboah" />
       <Navbar />
 
       {/* Header */}
@@ -82,6 +85,7 @@ const Blogs = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
 export default Blogs;

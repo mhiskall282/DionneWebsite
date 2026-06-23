@@ -17,7 +17,8 @@ import missionImageImage from "@/assets/mission-image.jpg";
 import GlobeMap from "@/components/GlobeMap";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter"
+import Newsletter from "@/components/Newsletter";
+import SEO from "@/components/SEO";
 import p1 from '@/assets/For a Purpose.svg';
 import p2 from '@/assets/For a People.svg';
 import p3 from '@/assets/The Passion That Drives Me.svg';
@@ -94,7 +95,9 @@ const MissionSection = () => {
 
 
 const Index = () => {
-  return <div className="min-h-screen w-full bg-background">
+  return (
+    <div className="min-h-screen w-full bg-background">
+      <SEO />
       <Navbar />
 
       {/* Hero Section */}
@@ -151,7 +154,7 @@ const Index = () => {
         </div>
 
         {/* Name Banner - overlaps the hero image */}
-        <div className="bg-primary text-primary-foreground py-8 relative z-30 overflow-hidden -mt-12 sm:-mt-16 md:-mt-24 xl:-mt-40 xl:py-0 ">
+        <div className="bg-primary text-primary-foreground py-8 relative z-30 overflow-hidden -mt-12 sm:-mt-16 md:-mt-32 lg:-mt-40 xl:-mt-48 xl:py-0 ">
           <div className="text-center relative z-40 pt-6 xl:pt-10 pb-6 px-0" data-aos="fade-up" data-aos-delay="400">
             <p className="text-sm md:text-lg tracking-wide mb-2 opacity-90">Hi, I'm</p>
             <h1 className="font-heading text-4xl md:text-5xl xl:text-7xl font-bold">
@@ -325,8 +328,8 @@ const Index = () => {
       {/* Newsletter */}
       <Newsletter />
 
-      {/* Footer */}
       <Footer />
-    </div>;
+    </div>
+  );
 };
 export default Index;
