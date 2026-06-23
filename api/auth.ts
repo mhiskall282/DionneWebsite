@@ -6,7 +6,7 @@ import { prisma } from './prisma';
 const router = Router();
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'hello@dionnetweneboah.com';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Millionaireby35$';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-for-development';
 
 export interface AuthRequest extends Request {

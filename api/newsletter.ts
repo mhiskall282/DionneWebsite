@@ -56,7 +56,7 @@ router.post('/send', requireAuth, async (req: Request, res: Response) => {
       secure: true, // true for 465, false for other ports
       auth: {
         user: process.env.SMTP_USER || 'hello@dionnetweneboah.com',
-        pass: process.env.SMTP_PASS || 'your_zoho_password',
+        pass: process.env.SMTP_PASS,
       },
     });
 
