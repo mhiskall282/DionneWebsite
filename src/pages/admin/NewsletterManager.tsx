@@ -71,7 +71,11 @@ export default function NewsletterManager() {
 
   const handleSubmitAttempt = (e: React.FormEvent) => {
     e.preventDefault();
-    setShowConfirm(true);
+    import("react").then((React) => {
+      React.startTransition(() => {
+        setShowConfirm(true);
+      });
+    });
   };
 
   const executeSendEmail = async () => {

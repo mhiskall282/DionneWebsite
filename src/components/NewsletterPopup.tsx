@@ -36,8 +36,12 @@ export default function NewsletterPopup() {
     const email = emailRef.current?.value;
     if (!email) return;
 
-    setStatus("loading");
-    setErrorMsg("");
+    import("react").then((React) => {
+      React.startTransition(() => {
+        setStatus("loading");
+        setErrorMsg("");
+      });
+    });
 
     try {
       const response = await fetch("/api/newsletter", {
