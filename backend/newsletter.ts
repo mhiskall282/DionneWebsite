@@ -46,70 +46,79 @@ router.post('/', async (req: Request, res: Response) => {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap');
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-block {
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f9f9f9; font-family: 'Inter', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #333333;">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 40px 20px; background-color: #f9f9f9;">
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #333333;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
     <tr>
-      <td align="center">
-        <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);">
+      <td align="center" style="padding: 20px 10px;">
+        <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" class="animate-block" style="max-width: 600px; background-color: #ffffff; margin: 0 auto;">
           
           <!-- Logo Bar -->
           <tr>
-            <td align="center" style="padding: 35px 30px 30px 30px; background-color: #ffffff;">
+            <td align="center" style="padding: 20px 0 30px 0;">
               <img src="https://www.dionnetweneboah.com/assets/logo.png" width="180" style="display: block; max-width: 100%; height: auto;" alt="Dionne Tweneboah Logo">
             </td>
           </tr>
 
           <!-- Hero Image -->
           <tr>
-            <td style="padding: 0 40px;">
-              <img src="https://www.dionnetweneboah.com/assets/news-image.jpg" width="520" style="display: block; width: 100%; max-width: 520px; height: auto; border-radius: 6px;" alt="Dionne Tweneboah">
+            <td style="padding-bottom: 30px;">
+              <img src="https://www.dionnetweneboah.com/assets/news-image.jpg" width="600" style="display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px;" alt="Dionne Tweneboah">
             </td>
           </tr>
 
           <!-- Content Body -->
           <tr>
-            <td style="padding: 40px;">
-              <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #111111; font-size: 26px; font-weight: 700; margin: 0 0 20px 0; line-height: 1.3;">Welcome to the Inner Circle</h1>
+            <td>
+              <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #992430; font-size: 28px; font-weight: 700; margin: 0 0 15px 0; line-height: 1.3;">Welcome to the Inner Circle</h1>
               
-              <p style="font-size: 15px; color: #444444; line-height: 1.7; margin: 0 0 20px 0;">
+              <div style="width: 50px; height: 3px; background-color: #FFD700; margin-bottom: 25px;"></div>
+              
+              <p style="font-size: 16px; color: #444444; line-height: 1.7; margin: 0 0 20px 0;">
                 I'm absolutely thrilled to have you here. You are here because you refuse to settle for ordinary. Get ready for real, honest conversations on growth, purpose, and becoming your absolute best self.
               </p>
               
               <!-- Elegant Quote Block -->
-              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin: 30px 0; background-color: #fafafa; border-left: 3px solid #992430;">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin: 30px 0;">
                 <tr>
-                  <td style="padding: 20px 25px;">
-                    <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #111111; font-style: italic; margin: 0; line-height: 1.6;">
+                  <td style="padding: 0 0 0 20px; border-left: 3px solid #FFD700;">
+                    <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 19px; color: #992430; font-style: italic; margin: 0; line-height: 1.6;">
                       "True success isn't about recognition or wealth; it's about the lives you touch and the change you inspire."
                     </p>
                   </td>
                 </tr>
               </table>
 
-              <p style="font-size: 15px; color: #444444; line-height: 1.7; margin: 0 0 35px 0;">
+              <p style="font-size: 16px; color: #444444; line-height: 1.7; margin: 0 0 35px 0;">
                 Stay tuned for updates on my upcoming books, speaking engagements, and exclusive resources designed specifically for this community. It's your time to shine.
               </p>
 
               <!-- CTA -->
               <table border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
                 <tr>
-                  <td align="center" style="background-color: #992430; border-radius: 4px;">
-                    <a href="https://www.dionnetweneboah.com" style="display: inline-block; padding: 12px 24px; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">Explore the Website</a>
+                  <td align="center" style="background-color: #992430; border-radius: 30px;">
+                    <a href="https://www.dionnetweneboah.com" style="display: inline-block; padding: 14px 28px; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXPLORE THE WEBSITE</a>
                   </td>
                 </tr>
               </table>
               
               <!-- Sign Off -->
-              <table border="0" cellspacing="0" cellpadding="0">
+              <table border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
                 <tr>
-                  <td width="55">
-                    <img src="https://www.dionnetweneboah.com/assets/dionne-portrait.jpg" width="55" height="55" style="border-radius: 50%; display: block; object-fit: cover;" alt="Dionne Tweneboah">
+                  <td width="65">
+                    <img src="https://www.dionnetweneboah.com/assets/dionne-portrait.jpg" width="65" height="65" style="border-radius: 50%; display: block; object-fit: cover;" alt="Dionne Tweneboah">
                   </td>
                   <td style="padding-left: 15px;">
-                    <p style="margin: 0; font-size: 14px; color: #777777;">Warmly,</p>
-                    <p style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: #111111;">Dionne Tweneboah</p>
+                    <p style="margin: 0; font-size: 14px; color: #777777;">Keep shining,</p>
+                    <p style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; color: #992430;">Dionne Tweneboah</p>
                   </td>
                 </tr>
               </table>
@@ -118,26 +127,30 @@ router.post('/', async (req: Request, res: Response) => {
 
           <!-- Footer -->
           <tr>
-            <td style="background-color: #fcfcfc; padding: 35px 40px; text-align: center; border-top: 1px solid #eaeaea;">
+            <td style="background-color: #992430; padding: 40px; text-align: center; border-radius: 12px;">
+              <p style="font-family: 'Playfair Display', serif; color: #FFD700; font-size: 20px; margin: 0 0 20px 0; font-weight: 600;">Let's Connect</p>
               
-              <!-- Subtle Social Icons -->
-              <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom: 20px;">
+              <!-- Social Icons -->
+              <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom: 25px;">
                 <tr>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="20" style="display:block; opacity: 0.6;"></a>
+                    <a href="https://instagram.com/dionnetweneboah"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
                   </td>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.linkedin.com/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" style="display:block; opacity: 0.6;"></a>
+                    <a href="https://linkedin.com/in/dionne-tweneboah"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
                   </td>
                   <td style="padding: 0 12px;">
-                    <a href="https://twitter.com/"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="20" style="display:block; opacity: 0.6;"></a>
+                    <a href="https://x.com/dionnetweneboah"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
+                  </td>
+                  <td style="padding: 0 12px;">
+                    <a href="https://facebook.com/dionne.akom.73"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
                   </td>
                 </tr>
               </table>
               
-              <p style="color: #888888; font-size: 12px; margin: 0 0 10px 0; line-height: 1.5;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
+              <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 0 0 15px 0; line-height: 1.5;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
               <p style="margin: 0;">
-                <a href="https://dionnetweneboah.com/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}" style="color: #992430; font-size: 12px; text-decoration: underline;">Unsubscribe from this list</a>
+                <a href="https://dionnetweneboah.com/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}" style="color: #FFD700; font-size: 12px; text-decoration: underline;">Unsubscribe from this list</a>
               </p>
             </td>
           </tr>
@@ -207,39 +220,48 @@ router.post('/send', requireAuth, async (req: Request, res: Response) => {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap');
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-block {
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f9f9f9; font-family: 'Inter', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #333333;">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 40px 20px; background-color: #f9f9f9;">
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: 'Inter', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #333333;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
     <tr>
-      <td align="center">
-        <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);">
+      <td align="center" style="padding: 20px 10px;">
+        <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" class="animate-block" style="max-width: 600px; background-color: #ffffff; margin: 0 auto;">
           
           <!-- Header Bar with Logo -->
           <tr>
-            <td align="center" style="padding: 35px 30px 30px 30px; background-color: #ffffff; border-bottom: 1px solid #f0f0f0;">
+            <td align="center" style="padding: 20px 0 30px 0;">
               <img src="https://www.dionnetweneboah.com/assets/logo.png" width="180" style="display: block; max-width: 100%; height: auto;" alt="Dionne Tweneboah Logo">
             </td>
           </tr>
 
           <!-- Main Content -->
           <tr>
-            <td style="padding: 45px 40px;">
-              <h2 style="font-family: 'Playfair Display', Georgia, serif; color: #111111; font-size: 24px; margin: 0 0 25px 0; line-height: 1.3; font-weight: 700;">${subject}</h2>
+            <td>
+              <h2 style="font-family: 'Playfair Display', Georgia, serif; color: #992430; font-size: 26px; margin: 0 0 20px 0; line-height: 1.3; font-weight: 700;">${subject}</h2>
               
-              <div style="font-size: 15px; color: #444444; line-height: 1.7; margin-bottom: 40px;">
+              <div style="width: 50px; height: 3px; background-color: #FFD700; margin-bottom: 25px;"></div>
+              
+              <div style="font-size: 16px; color: #444444; line-height: 1.7; margin-bottom: 40px;">
                 ${message.replace(/\n/g, '<br>')}
               </div>
               
               <!-- Sign Off -->
-              <table border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+              <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; margin-bottom: 40px;">
                 <tr>
-                  <td width="55">
-                    <img src="https://www.dionnetweneboah.com/assets/dionne-portrait.jpg" width="55" height="55" style="border-radius: 50%; display: block; object-fit: cover;" alt="Dionne Tweneboah">
+                  <td width="65">
+                    <img src="https://www.dionnetweneboah.com/assets/dionne-portrait.jpg" width="65" height="65" style="border-radius: 50%; display: block; object-fit: cover;" alt="Dionne Tweneboah">
                   </td>
                   <td style="padding-left: 15px;">
                     <p style="margin: 0; font-size: 14px; color: #777777;">With purpose,</p>
-                    <p style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: #111111;">Dionne Tweneboah</p>
+                    <p style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; color: #992430;">Dionne Tweneboah</p>
                   </td>
                 </tr>
               </table>
@@ -248,25 +270,31 @@ router.post('/send', requireAuth, async (req: Request, res: Response) => {
 
           <!-- Footer -->
           <tr>
-            <td style="background-color: #fcfcfc; padding: 35px 40px; text-align: center; border-top: 1px solid #eaeaea;">
+            <td style="background-color: #992430; padding: 40px; text-align: center; border-radius: 12px;">
+              
+              <p style="font-family: 'Playfair Display', serif; color: #FFD700; font-size: 18px; margin: 0 0 20px 0; font-weight: 600;">Stay Connected</p>
+              
               <!-- Subtle Social Icons -->
-              <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom: 20px;">
+              <table border="0" cellspacing="0" cellpadding="0" align="center" style="margin-bottom: 25px;">
                 <tr>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="20" style="display:block; opacity: 0.6;"></a>
+                    <a href="https://instagram.com/dionnetweneboah"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
                   </td>
                   <td style="padding: 0 12px;">
-                    <a href="https://www.linkedin.com/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" style="display:block; opacity: 0.6;"></a>
+                    <a href="https://linkedin.com/in/dionne-tweneboah"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
                   </td>
                   <td style="padding: 0 12px;">
-                    <a href="https://twitter.com/"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="20" style="display:block; opacity: 0.6;"></a>
+                    <a href="https://x.com/dionnetweneboah"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
+                  </td>
+                  <td style="padding: 0 12px;">
+                    <a href="https://facebook.com/dionne.akom.73"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="22" style="display:block; filter: brightness(0) invert(1);"></a>
                   </td>
                 </tr>
               </table>
               
-              <p style="color: #888888; font-size: 12px; margin: 0 0 10px 0; line-height: 1.5;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
+              <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 0 0 15px 0; line-height: 1.5;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
               <p style="margin: 0;">
-                <a href="https://dionnetweneboah.com/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}" style="color: #992430; font-size: 12px; text-decoration: underline;">Update your preferences</a>
+                <a href="https://dionnetweneboah.com/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}" style="color: #FFD700; font-size: 12px; text-decoration: underline;">Update your preferences</a>
               </p>
             </td>
           </tr>
