@@ -2,6 +2,16 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Download, Send, Copy, Mail } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 export default function NewsletterManager() {
   const [subscribers, setSubscribers] = useState<any[]>([]);
@@ -10,6 +20,7 @@ export default function NewsletterManager() {
   const [emailMessage, setEmailMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const { toast } = useToast();
 
   const token = localStorage.getItem("admin_token");
@@ -58,10 +69,13 @@ export default function NewsletterManager() {
     toast({ title: "Emails copied to clipboard!" });
   };
 
-  const handleSendEmail = async (e: React.FormEvent) => {
+  const handleSubmitAttempt = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!confirm(`Are you sure you want to send this email to ${subscribers.length} subscribers?`)) return;
-    
+    setShowConfirm(true);
+  };
+
+  const executeSendEmail = async () => {
+    setShowConfirm(false);
     setSending(true);
     try {
       const res = await fetch("/api/newsletter/send", {
@@ -103,7 +117,7 @@ export default function NewsletterManager() {
           <Button variant="outline" onClick={() => setIsComposing(false)}>Cancel</Button>
         </div>
 
-        <form onSubmit={handleSendEmail} className="space-y-6 bg-card p-6 rounded-xl border border-border shadow-sm">
+        <form onSubmit={handleSubmitAttempt} className="space-y-6 bg-card p-6 rounded-xl border border-border shadow-sm">
           <div className="p-4 bg-primary/5 rounded-lg border border-primary/20 flex items-center gap-3">
             <Mail className="text-primary" />
             <div>
@@ -131,6 +145,21 @@ export default function NewsletterManager() {
             <Send size={18} /> {sending ? "Sending..." : "Send Email Broadcast"}
           </Button>
         </form>
+
+        <AlertDialog open={showConfirm} onOpenChange={setShowConfirm}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Send Broadcast Email?</AlertDialogTitle>
+              <AlertDialogDescription>
+                Are you sure you want to send this email to {subscribers.length} subscribers? This action cannot be undone.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction onClick={executeSendEmail}>Yes, Send Now</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     );
   }
