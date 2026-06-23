@@ -13,6 +13,7 @@ import Speaking from "./pages/Speaking";
 import Blogs from "./pages/Blogs";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
 
 import AdminLogin from "./pages/admin/Login";
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -55,6 +56,7 @@ const AppContent = () => {
   return (
     <>
       {showLoader && <Loader />}
+      <CookieConsent />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />

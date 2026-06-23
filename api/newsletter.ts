@@ -60,36 +60,73 @@ router.post('/send', requireAuth, async (req: Request, res: Response) => {
       },
     });
 
-    // Beautiful HTML template for the email
-    const htmlTemplate = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaeb; border-radius: 8px; overflow: hidden;">
-        <div style="background-color: #982330; padding: 20px; text-align: center;">
-          <h1 style="color: #FFD700; margin: 0; font-size: 24px;">Dionne Tweneboah</h1>
-        </div>
-        <div style="padding: 30px; background-color: #ffffff; color: #333333; line-height: 1.6;">
-          <h2 style="color: #982330; font-size: 20px; margin-top: 0;">${subject}</h2>
-          <div style="font-size: 16px;">
-            ${message.replace(/\n/g, '<br>')}
+    // Send emails sequentially to customize the unsubscribe link for each recipient
+    const sendPromises = recipientEmails.map(async (email: string) => {
+      // Create a customized template with an unsubscribe link for this specific email
+      const customHtmlTemplate = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaeb; border-radius: 8px; overflow: hidden;">
+          <div style="background-color: #982330; padding: 20px; text-align: center;">
+            <h1 style="color: #FFD700; margin: 0; font-size: 24px;">Dionne Tweneboah</h1>
+          </div>
+          <div style="padding: 30px; background-color: #ffffff; color: #333333; line-height: 1.6;">
+            <h2 style="color: #982330; font-size: 20px; margin-top: 0;">${subject}</h2>
+            <div style="font-size: 16px;">
+              ${message.replace(/\n/g, '<br>')}
+            </div>
+          </div>
+          <div style="background-color: #f9f9f9; padding: 15px; text-align: center; border-top: 1px solid #eaeaeb;">
+            <p style="color: #888888; font-size: 12px; margin: 0; margin-bottom: 8px;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
+            <p style="margin: 0; font-size: 12px;">
+              <a href="https://dionnetweneboah.com/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}" style="color: #982330; text-decoration: underline;">Unsubscribe from these emails</a>
+            </p>
           </div>
         </div>
-        <div style="background-color: #f9f9f9; padding: 15px; text-align: center; border-top: 1px solid #eaeaeb;">
-          <p style="color: #888888; font-size: 12px; margin: 0;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
-        </div>
-      </div>
-    `;
+      `;
 
-    // Send emails in a loop or bcc
-    const info = await transporter.sendMail({
-      from: `"Dionne Tweneboah" <${process.env.SMTP_USER || 'hello@dionnetweneboah.com'}>`,
-      to: recipientEmails.join(', '),
-      subject: subject,
-      html: htmlTemplate,
+      return transporter.sendMail({
+        from: `"Dionne Tweneboah" <${process.env.SMTP_USER || 'hello@dionnetweneboah.com'}>`,
+        to: email,
+        subject: subject,
+        html: customHtmlTemplate,
+      });
     });
 
-    res.json({ success: true, messageId: info.messageId });
+    await Promise.all(sendPromises);
+
+    res.json({ success: true, count: recipientEmails.length });
   } catch (err) {
     console.error('Error sending email:', err);
     res.status(500).json({ error: 'Failed to send email. Check SMTP config.' });
+  }
+});
+
+// GET unsubscribe (public)
+router.get('/unsubscribe', async (req: Request, res: Response) => {
+  try {
+    const email = req.query.email as string;
+    if (!email) {
+      res.status(400).send("Email parameter is missing.");
+      return;
+    }
+
+    await prisma.subscriber.delete({
+      where: { email }
+    });
+
+    res.send(`
+      <div style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+        <h1 style="color: #982330;">Unsubscribed Successfully</h1>
+        <p>You have been removed from our mailing list. You can close this window.</p>
+      </div>
+    `);
+  } catch (err) {
+    // If the record doesn't exist, it throws an error. We can just gracefully say they are unsubscribed anyway.
+    res.send(`
+      <div style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+        <h1 style="color: #982330;">Unsubscribed</h1>
+        <p>You are no longer on the mailing list.</p>
+      </div>
+    `);
   }
 });
 
