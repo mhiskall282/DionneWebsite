@@ -1,11 +1,10 @@
-// @ts-nocheck
 import express from 'express';
 import cors from 'cors';
-import authRouter from './auth';
-import blogsRouter from './blogs';
-import booksRouter from './books';
-import newsletterRouter from './newsletter';
-import uploadRouter from './upload';
+import authRouter from './auth.js';
+import blogsRouter from './blogs.js';
+import booksRouter from './books.js';
+import newsletterRouter from './newsletter.js';
+import uploadRouter from './upload.js';
 
 const app = express();
 

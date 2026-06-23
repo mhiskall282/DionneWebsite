@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { Router, Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import { prisma } from './prisma';
+import { prisma } from './prisma.js';
 
 const router = Router();
 

@@ -1,6 +1,5 @@
-// @ts-nocheck
 import { Router, Request, Response } from 'express';
-import { requireAuth } from './auth';
+import { requireAuth } from './auth.js';
 import { put } from '@vercel/blob';
 import multer from 'multer';
 

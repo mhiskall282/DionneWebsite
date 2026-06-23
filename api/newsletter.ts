@@ -1,7 +1,6 @@
-// @ts-nocheck
 import { Router, Request, Response } from 'express';
-import { prisma } from './prisma';
-import { requireAuth } from './auth';
+import { prisma } from './prisma.js';
+import { requireAuth } from './auth.js';
 import nodemailer from 'nodemailer';
 import * as xlsx from 'xlsx';
 
