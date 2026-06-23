@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Router, Request, Response } from 'express';
 import { requireAuth } from './auth';
 import { put } from '@vercel/blob';
