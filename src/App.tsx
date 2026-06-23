@@ -23,6 +23,8 @@ import BlogsManager from "./pages/admin/BlogsManager";
 import BooksManager from "./pages/admin/BooksManager";
 import Settings from "./pages/admin/Settings";
 
+import NewsletterPopup from "./components/NewsletterPopup";
+
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -31,18 +33,22 @@ const AppContent = () => {
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
 
   useEffect(() => {
-    // Only show loader on initial home page load
-    if (location.pathname === "/" && !hasLoadedOnce) {
-      const timer = setTimeout(() => {
-        setShowLoader(false);
-        setHasLoadedOnce(true);
-      }, 6500); // Show loader for ~6.5 seconds (progress animation + fade out)
-      return () => clearTimeout(timer);
-    } else if (location.pathname !== "/") {
-      // If navigating away from home, don't show loader
+    // Don't show loader for admin routes
+    if (location.pathname.startsWith("/admin")) {
       setShowLoader(false);
+      return;
     }
-  }, [location.pathname, hasLoadedOnce]);
+
+    // Show loader on every public page navigation
+    setShowLoader(true);
+    
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+      setHasLoadedOnce(true);
+    }, hasLoadedOnce ? 3000 : 6500); // 6.5s for initial load, 3s for subsequent page navigations
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   useEffect(() => {
     AOS.init({
@@ -58,6 +64,7 @@ const AppContent = () => {
     <>
       {showLoader && <Loader />}
       <CookieConsent />
+      {!location.pathname.startsWith("/admin") && <NewsletterPopup />}
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
