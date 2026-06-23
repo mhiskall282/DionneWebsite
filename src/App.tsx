@@ -21,6 +21,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import NewsletterManager from "./pages/admin/NewsletterManager";
 import BlogsManager from "./pages/admin/BlogsManager";
 import BooksManager from "./pages/admin/BooksManager";
+import Settings from "./pages/admin/Settings";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const AppContent = () => {
           <Route path="newsletter" element={<NewsletterManager />} />
           <Route path="blogs" element={<BlogsManager />} />
           <Route path="books" element={<BooksManager />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

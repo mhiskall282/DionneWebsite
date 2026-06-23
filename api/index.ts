@@ -13,16 +13,21 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/auth', authRouter);
-app.use('/blogs', blogsRouter);
-app.use('/books', booksRouter);
-app.use('/newsletter', newsletterRouter);
-app.use('/upload', uploadRouter);
+const apiRouter = express.Router();
+apiRouter.use('/auth', authRouter);
+apiRouter.use('/blogs', blogsRouter);
+apiRouter.use('/books', booksRouter);
+apiRouter.use('/newsletter', newsletterRouter);
+apiRouter.use('/upload', uploadRouter);
 
 // Health check
-app.get('/health', (req, res) => {
+apiRouter.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'Vercel Monolithic Backend is running.' });
 });
+
+// Handle both Vercel (/api/...) and Local Vite (/...) routes seamlessly
+app.use('/api', apiRouter);
+app.use('/', apiRouter);
 
 // Export default for Vite middleware, and also export app for Vercel
 export default app;

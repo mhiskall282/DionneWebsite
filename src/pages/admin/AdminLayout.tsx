@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet, Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, BookOpen, PenTool, Mail, LogOut } from "lucide-react";
+import { LayoutDashboard, BookOpen, PenTool, Mail, LogOut, Settings as SettingsIcon } from "lucide-react";
 
 export default function AdminLayout() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
@@ -44,6 +44,7 @@ export default function AdminLayout() {
     { name: "Blogs", path: "/admin/blogs", icon: PenTool },
     { name: "Books", path: "/admin/books", icon: BookOpen },
     { name: "Newsletter", path: "/admin/newsletter", icon: Mail },
+    { name: "Settings", path: "/admin/settings", icon: SettingsIcon },
   ];
 
   return (

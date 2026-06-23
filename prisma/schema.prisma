@@ -36,3 +36,14 @@ model Subscriber {
   active    Boolean  @default(true)
   createdAt DateTime @default(now())
 }
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  name        String?
+  role        String   @default("MANAGER") // "ADMIN" or "MANAGER"
+  permissions String   // JSON string array of permissions like '["manage_blogs", "manage_users"]'
+  createdAt   DateTime @default(now())
+}
+
