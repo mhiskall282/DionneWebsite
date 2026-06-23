@@ -259,3 +259,7 @@ BLOB_READ_WRITE_TOKEN
 - Prisma generates client files at build time. If the DB schema changes, run `npx prisma generate` and `npx prisma db push`.
 - Vite serves the Express API at `/api/*` in development via a proxy configured in `vite.config.ts`.
 - On Windows, stop the dev server before running `npx prisma generate` to avoid file locking errors.
+
+
+
+
