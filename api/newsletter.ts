@@ -25,8 +25,56 @@ router.post('/', async (req: Request, res: Response) => {
     const subscriber = await prisma.subscriber.create({
       data: { email },
     });
+
+    // Send Welcome Email
+    try {
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST || 'smtp.zoho.com',
+        port: Number(process.env.SMTP_PORT) || 465,
+        secure: true,
+        auth: {
+          user: process.env.SMTP_USER || 'newsletters@dionnetweneboah.com',
+          pass: process.env.SMTP_PASS,
+        },
+      });
+
+      const welcomeTemplate = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaeb; border-radius: 8px; overflow: hidden;">
+          <div style="background-color: #982330; padding: 20px; text-align: center;">
+            <h1 style="color: #FFD700; margin: 0; font-size: 24px;">Welcome to the Community!</h1>
+          </div>
+          <div style="padding: 30px; background-color: #ffffff; color: #333333; line-height: 1.6;">
+            <h2 style="color: #982330; font-size: 20px; margin-top: 0;">Hi there,</h2>
+            <div style="font-size: 16px;">
+              <p>Thank you for joining my mailing list! I'm so excited to have you here.</p>
+              <p>Get ready for honest conversations on growth, purpose, and becoming your best self. Every message I send is crafted to inspire you to rise above the ordinary and step boldly into your calling.</p>
+              <p>Stay tuned for updates on my books, speaking engagements, and exclusive resources.</p>
+              <p>Warmly,<br><strong>Dionne Tweneboah</strong></p>
+            </div>
+          </div>
+          <div style="background-color: #f9f9f9; padding: 15px; text-align: center; border-top: 1px solid #eaeaeb;">
+            <p style="color: #888888; font-size: 12px; margin: 0; margin-bottom: 8px;">&copy; ${new Date().getFullYear()} Dionne Tweneboah. All rights reserved.</p>
+            <p style="margin: 0; font-size: 12px;">
+              <a href="https://dionnetweneboah.com/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}" style="color: #982330; text-decoration: underline;">Unsubscribe</a>
+            </p>
+          </div>
+        </div>
+      `;
+
+      await transporter.sendMail({
+        from: \`"Dionne Tweneboah" <\${process.env.SMTP_USER || 'newsletters@dionnetweneboah.com'}>\`,
+        to: email,
+        subject: "Welcome to my Newsletter! It's your time to shine 🌟",
+        html: welcomeTemplate,
+      });
+    } catch (emailErr) {
+      console.error('Failed to send welcome email:', emailErr);
+      // We don't fail the subscription if the email fails
+    }
+
     res.status(201).json(subscriber);
   } catch (err) {
+    console.error('Subscription error:', err);
     res.status(500).json({ error: 'Failed to subscribe' });
   }
 });
