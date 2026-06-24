@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Books from "./pages/Books";
 import Speaking from "./pages/Speaking";
 import Blogs from "./pages/Blogs";
+import BlogPost from "./pages/BlogPost";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
@@ -71,6 +72,7 @@ const AppContent = () => {
         <Route path="/books" element={<Books />} />
         <Route path="/speaking" element={<Speaking />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:slug" element={<BlogPost />} />
         <Route path="/resources" element={<Resources />} />
         
         {/* Admin Routes */}
