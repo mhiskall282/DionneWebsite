@@ -140,12 +140,11 @@ const Newsletter = () => {
         {/* Bottom Text Overlay */}
         <div className="absolute bottom-12 left-8 right-12 space-y-4">
           <h3 className="text-white text-3xl md:text-5xl font-serif font-bold leading-tight">
-            It's Your Time to Shine
+            Become Who You're Meant to Be.
           </h3>
-          <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed">
-            Join my newsletter for honest conversations on growth, purpose, and
-            becoming your best self. Every message is crafted to inspire you to
-            rise above ordinary and step boldly into your calling.
+          <p className="text-white/90 text-base md:text-lg max-w-xl leading-relaxed">
+            Get empowering stories, lessons, and tools on self-growth,
+            purpose, and leadership straight to your inbox.
           </p>
         </div>
       </div>
@@ -154,11 +153,11 @@ const Newsletter = () => {
       <div className="flex items-center justify-center px-8 py-16 lg:px-12 lg:col-span-5">
         <div className="w-full max-w-sm space-y-8">
           <div className="space-y-4">
-            <h2 className="text-[#992430] text-4xl md:text-5xl font-serif font-bold leading-tight">
-              Sign up to my weekly newsletter
+            <h2 className="text-[#992430] text-3xl md:text-4xl font-serif font-bold leading-tight">
+              Sign Up!
             </h2>
-            <p className="text-gray-500 text-lg">
-              Don't miss your chance. Sign Up today!
+            <p className="text-gray-500 text-base">
+              Don't miss your chance to grow, lead, and live fully. Sign up today.
             </p>
           </div>
 
