@@ -254,7 +254,7 @@ const Books = () => {
       </section>
 
       {/* Who This Book Is For - Tyranny */}
-      <section className="relative overflow-hidden py-16 md:py-24">
+      <section className="relative h-[300px] md:h-[350px] flex items-center justify-center overflow-hidden">
         {/* Background video — full visibility, no overlay */}
         <video
           autoPlay
@@ -266,9 +266,9 @@ const Books = () => {
           <source src="/assets/dionne-video.mp4" type="video/mp4" />
         </video>
 
-        <div className="relative z-10 container mx-auto px-4">
+        <div className="relative z-10 container mx-auto px-4 text-center">
           {/* Headings float over the video — no background */}
-          <div className="text-center mb-16" data-aos="fade-up">
+          <div data-aos="fade-up">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
               Who This Book Is For
             </h2>
@@ -279,9 +279,14 @@ const Books = () => {
               If You're Wondering...
             </p>
           </div>
+        </div>
+      </section>
 
+      {/* Features card section overlapping the video section */}
+      <section className="relative z-20 pb-16 bg-background">
+        <div className="container mx-auto px-4">
           {/* White card pushed down — contains the list */}
-          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 mt-4" data-aos="fade-up" data-aos-delay="100">
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 -mt-16 md:-mt-24 relative z-30 border border-neutral-100" data-aos="fade-up" data-aos-delay="100">
             <h3
               className="font-heading text-xl md:text-2xl font-semibold mb-8 text-center text-primary italic"
             >
