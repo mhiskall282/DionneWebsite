@@ -254,25 +254,36 @@ const Books = () => {
       </section>
 
       {/* Who This Book Is For - Tyranny */}
-      <section className="py-16 md:py-24 bg-[hsl(0,0%,95%)]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        {/* Background video — full visibility, no overlay */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/assets/dionne-video.mp4" type="video/mp4" />
+        </video>
+
+        <div className="relative z-10 container mx-auto px-4">
+          {/* Headings float over the video — no background */}
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
               Who This Book Is For
             </h2>
             <p
-              className="font-signature text-2xl md:text-3xl italic text-muted-foreground"
-              style={{ fontFamily: "Brittany Signature" }}
+              className="text-2xl md:text-3xl italic text-white/90 drop-shadow"
+              style={{ fontFamily: "'Dancing Script', cursive" }}
             >
               If You're Wondering...
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto">
+          {/* White card pushed down — contains the list */}
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 mt-4" data-aos="fade-up" data-aos-delay="100">
             <h3
-              className="font-heading text-xl md:text-2xl font-semibold mb-8 text-center text-primary"
-              data-aos="fade-up"
-              data-aos-delay="100"
+              className="font-heading text-xl md:text-2xl font-semibold mb-8 text-center text-primary italic"
             >
               This book is for the one who:
             </h3>
