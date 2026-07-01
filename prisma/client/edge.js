@@ -162,7 +162,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\user\\Desktop\\DionneWebsite\\prisma\\client",
+      "value": "/workspaces/DionneWebsite/prisma/client",
       "fromEnvVar": null
     },
     "config": {
@@ -171,7 +171,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-1.1.x",
         "native": true
       },
       {
@@ -180,12 +180,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\user\\Desktop\\DionneWebsite\\prisma\\schema.prisma",
+    "sourceFilePath": "/workspaces/DionneWebsite/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "..",
   "clientVersion": "5.22.0",
