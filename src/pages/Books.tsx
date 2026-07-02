@@ -254,7 +254,7 @@ const Books = () => {
       </section>
 
       {/* Who This Book Is For - Tyranny */}
-      <section className="relative h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background video — full visibility, no overlay */}
         <video
           autoPlay
