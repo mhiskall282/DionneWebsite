@@ -254,7 +254,7 @@ const Books = () => {
       </section>
 
       {/* Who This Book Is For - Tyranny */}
-      <section className="relative h-[300px] md:h-[350px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden">
         {/* Background video — full visibility, no overlay */}
         <video
           autoPlay
@@ -269,11 +269,11 @@ const Books = () => {
         <div className="relative z-10 container mx-auto px-4 text-center">
           {/* Headings float over the video — no background */}
           <div data-aos="fade-up">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2 text-black drop-shadow-lg">
               Who This Book Is For
             </h2>
             <p
-              className="text-2xl md:text-3xl italic text-white/90 drop-shadow"
+              className="text-2xl md:text-3xl italic text-black/90 drop-shadow"
               style={{ fontFamily: "'Dancing Script', cursive" }}
             >
               If You're Wondering...
